@@ -3,7 +3,7 @@
 @import url(chrome/drag_window_from_urlbar.css);
 	/* Sidebar - autohide_sidebar.css References */
 :root,
-#sidebar-box {	
+#sidebar-box {
 	--uc-sidebar-width:						38px;
 	--uc-sidebar-hover-width:				300px;
 	--uc-autohide-sidebar-delay:			500ms;
@@ -70,7 +70,7 @@
 		background: var(--toolbar-bgcolor) !important;
 	}
 	@media (-moz-bool-pref: "uc.chromeless") {
-	/* Make Sidebar completey hidden */
+	/* Make Sidebar completey hidden until hover */
 		#sidebar-box {	
 			--uc-sidebar-width: 0px !important;
 		}
@@ -118,10 +118,10 @@
 .titlebar-spacer[type="pre-tabs"],
 .titlebar-spacer[type="post-tabs"],
 	/* Remove Menu Items */
-#context-openlink,					
+#context-openlink,
 #context-openlinkprivate,
 #context-savelinktopocket,
-#context-sendimage, 
+#context-sendimage,
 #context-viewimageinfo,
 #context-inspect,
 #context-inspect-a11y {
