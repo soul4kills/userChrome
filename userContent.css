@@ -1,0 +1,15 @@
+@import url(theme/website-newtab.css); /*new tab page*/
+div.popup:has(.header) {
+	background: transparent !important;
+	box-shadow: transparent 0px 0px 0px 0px !important;
+}
+@media (max-width: 1749px) and (min-width: 1747px) {
+	div.popup:has(.header) {
+		left: -300px; !important;
+	}
+}
+@media (-moz-bool-pref: "uc.chromeless") {
+	div.popup:has(.header) {
+		left: -600px; !important;
+	}
+}

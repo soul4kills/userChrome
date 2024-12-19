@@ -1,0 +1,168 @@
+@import url(chrome/autohide_main_toolbar.css);
+@import url(chrome/autohide_sidebar.css);
+@import url(chrome/drag_window_from_urlbar.css);
+	/* Sidebar - autohide_sidebar.css References */
+:root,
+#sidebar-box {	
+	--uc-sidebar-width:						38px;
+	--uc-sidebar-hover-width:				300px;
+	--uc-autohide-sidebar-delay:			500ms;
+	--uc-autohide-transition-duration:		300ms;
+	--uc-autohide-transition-type:			ease-in-out;
+}
+	/* Main Toolbar - autohide_main_toolbar.css References */
+:root {			
+	--uc-navbar-transform:					-40px;
+	--uc-autohide-toolbar-delay:			var(--uc-autohide-sidebar-delay);
+	--uc-autohide-toolbar-duration:			var(--uc-autohide-transition-duration);
+}
+	/* Always show sidebar when maximized */
+:root[sizemode="maximized"] {
+	@media (max-height: 1200px) {
+		#sidebar-box {
+		--uc-sidebar-width: var(--uc-sidebar-hover-width) !important;
+		}
+	}
+	@media (-moz-bool-pref: "uc.smalltabs") {
+		#sidebar-box {
+			--uc-sidebar-width: 38px !important;
+		}
+	}
+	@media not (-moz-bool-pref: "uc.chromeless") {
+		#sidebar-header,
+		#sidebar {
+			opacity: 95% !important;
+		}
+	}
+}
+	/* Needs Sidebery - Hides tab bar but leaves window controls clickable */
+#main-window[titlepreface*="?? "] {
+	#TabsToolbar {
+		visibility: collapse;
+	}
+	#TabsToolbar.browser-toolbar.browser-titlebar {
+		z-index: 10 !important;
+	}
+	/* Affects window control positioning test later */
+	.titlebar-buttonbox-container { 
+		display: block;
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		visibility: visible !important;
+	}
+	/* Remove revamp sidebar toolbar */	
+	#sidebar-main {
+		visibility: collapse !important;
+		display: none !important;
+	}
+	/* Add padding for window controls */
+	#PanelUI-button,
+	#personal-bookmarks {
+		padding-right: 30px !important;
+	}
+	.titlebar-button { 
+		height: 40px;
+		width: 36px !important
+	}
+	.titlebar-buttonbox-container:hover .titlebar-button {
+		transition: 500ms ease-in;
+		background: var(--toolbar-bgcolor) !important;
+	}
+	@media (-moz-bool-pref: "uc.chromeless") {
+	/* Make Sidebar completey hidden */
+		#sidebar-box {	
+			--uc-sidebar-width: 0px !important;
+		}
+		#sidebar-header,
+		#sidebar{
+			min-width: 6px !important;
+			opacity: 0%;
+			transition: opacity
+						var(--uc-autohide-transition-duration)
+						var(--uc-autohide-transition-type)
+						var(--uc-autohide-sidebar-delay),
+						min-width var(--uc-autohide-transition-duration)
+						var(--uc-autohide-transition-type)
+						var(--uc-autohide-sidebar-delay) !important;
+		}
+		#sidebar-box:hover > #sidebar-header,
+		#sidebar-box:hover > #sidebar{
+			min-width: var(--uc-sidebar-hover-width) !important;
+			opacity: 95% !important;
+			transition-delay: 0ms !important;
+		}
+	}
+}
+	/* Controls hover area size - Shifts hidden navbar down for hover detection */
+#nav-bar {
+    transform: translateY(-28px);
+}
+#PersonalToolbar {
+	height: 40px !important;
+	z-index: auto !important;
+}
+#sidebar-box {
+	z-index: 1 !important;
+	opacity: 95% !important;
+}
+	/* Shorten sidebar header a bit & make it draggable */
+#sidebar-header {
+	height: 38px !important;
+	background: var(--toolbar-bgcolor) !important;
+	-moz-window-dragging: drag;
+}
+#zoom-controls separator,
+	/* Removes left and right spacers in toolbar & Sidebar close button */
+#sidebar-close,
+.titlebar-spacer[type="pre-tabs"],
+.titlebar-spacer[type="post-tabs"],
+	/* Remove Menu Items */
+#context-openlink,					
+#context-openlinkprivate,
+#context-savelinktopocket,
+#context-sendimage, 
+#context-viewimageinfo,
+#context-inspect,
+#context-inspect-a11y {
+	display: none !important;
+}
+#urlbar-background {
+	opacity: 0.85;
+}
+	/* Collapses & Expands Windows Controls */
+.titlebar-restore,
+.titlebar-max,
+.titlebar-close { 
+	visibility: collapse !important;
+	opacity: 0 !important;
+}
+.titlebar-buttonbox-container:hover .titlebar-restore,
+.titlebar-buttonbox-container:hover .titlebar-max,
+.titlebar-buttonbox-container:hover .titlebar-close,
+.titlebar-buttonbox-container:hover .titlebar-button{
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+@media not (-moz-bool-pref: "sidebar.verticalTabs")	{
+	/* Shorter Tab Bar*/
+	:root {
+		--tab-max-height: 24px !important;
+		--tab-min-height: 0px !important;
+		--urlbar-toolbar-height: var(--tab-max-height) !important;
+	}
+	.tab-background {
+		margin: 0 !important;
+	}
+	.tab-secondary-label {
+		font-size: .5em !important;
+		margin: -.6em 0 .5em !important;
+	}
+}
+@media (-moz-bool-pref: "sidebar.verticalTabs")	{
+	/* Remove revamp sidebar buttons */
+	.tools-and-extensions.actions-list,
+	.bottom-actions {
+		display: none !important;
+	}
+}
