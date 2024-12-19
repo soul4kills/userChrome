@@ -18,9 +18,11 @@ about:config settings to set
 - sidebar.verticalTabs = false
 - sidebar.revamp = false
 
-
-https://github.com/user-attachments/assets/44c52ca7-903c-4c5c-ab6e-5e89b019131e
-
+Default Functionality
 
 
 https://github.com/user-attachments/assets/4f3f6a3c-50bd-4f49-8739-b67d5778b2f4
+
+
+
+https://github.com/user-attachments/assets/44c52ca7-903c-4c5c-ab6e-5e89b019131e
