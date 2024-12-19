@@ -1,13 +1,16 @@
-@import url(theme/website-newtab.css); /*new tab page*/
+@import url(theme/website-newtab.css); /* New tab page */
+	/* Sidebery - pop-in-page tab preview cosmetic changes */
 div.popup:has(.header) {
 	background: transparent !important;
-	box-shadow: transparent 0px 0px 0px 0px !important;
+	box-shadow: transparent 0 0 0 0 !important;
 }
+	/* Sidebery - fix pop-in-page tab preview alignment - Specifically when maximized */
 @media (max-width: 1749px) and (min-width: 1747px) {
 	div.popup:has(.header) {
 		left: -300px; !important;
 	}
 }
+	/* Sidebery - tab preview fix  when uc.chromeless is toggled to true */
 @media (-moz-bool-pref: "uc.chromeless") {
 	div.popup:has(.header) {
 		left: -600px; !important;
