@@ -7,12 +7,12 @@ div.popup:has(.header) {
 	/* Sidebery - fix pop-in-page tab preview alignment - Specifically when maximized */
 @media (max-width: 1749px) and (min-width: 1747px) {
 	div.popup:has(.header) {
-		left: -300px; !important;
+		left: -300px !important;
 	}
 }
 	/* Sidebery - tab preview fix  when uc.chromeless is toggled to true */
 @media (-moz-bool-pref: "uc.chromeless") {
 	div.popup:has(.header) {
-		left: -600px; !important;
+		left: -600px !important;
 	}
 }
