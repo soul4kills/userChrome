@@ -1,6 +1,7 @@
 @import url(chrome/autohide_main_toolbar.css);
 @import url(chrome/autohide_sidebar.css);
 @import url(chrome/drag_window_from_urlbar.css);
+/*@import url(mycolors.css);*/
 	/* Sidebar - autohide_sidebar.css References */
 :root,
 #sidebar-box {
@@ -15,15 +16,16 @@
 	--uc-navbar-transform: -40px;
 	--uc-autohide-toolbar-delay: var(--uc-autohide-sidebar-delay);
 	--uc-autohide-toolbar-duration: var(--uc-autohide-transition-duration);
+	--uc-transition-global: var(--uc-autohide-transition-duration) var(--uc-autohide-transition-type) var(--uc-autohide-sidebar-delay);
 }
-	/* Always show full sidebar when maximized - Disabled if < 1200px wide */
+	/* Show full sidebar when maximized - Disabled if < 1200px wide */
 :root[sizemode="maximized"] {
 	@media (min-width: 1200px) {
 		#sidebar-box {
 		--uc-sidebar-width: var(--uc-sidebar-hover-width) !important;
 		}
 	}
-	/* Toggle to disable show full sidebar when maximized */
+	/* Toggle for full sidebar when maximized */
 	@media (-moz-bool-pref: "uc.smalltabs") {
 		#sidebar-box {
 			--uc-sidebar-width: 38px !important;
@@ -36,15 +38,15 @@
 		}
 	}
 }
-	/* Sidebery Required - Set Sidebery preface here - Enables/Disables things when Sidebery is closed */
-#main-window[titlepreface*="?? "] {
+	/* Hides tab bar when Sidebery is active */
+:has(#sidebar-box[sidebarcommand*="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"][checked*="true"]) {
 	#TabsToolbar {
 		visibility: collapse;
 	}
 	#TabsToolbar.browser-toolbar.browser-titlebar {
 		z-index: 10 !important;
 	}
-	/* Affects window control positioning test later */
+	/* Positioning for window controls */
 	.titlebar-buttonbox-container { 
 		display: block;
 		position: absolute;
@@ -64,38 +66,40 @@
 	}
 	.titlebar-button { 
 		height: 40px;
-		width: 36px !important
+		width: 36px !important;
 	}
 	.titlebar-buttonbox-container:hover .titlebar-button {
 		transition: 500ms ease-in;
 		background: var(--toolbar-bgcolor) !important;
 	}
-	/* Toggle to Make Sidebar completey hidden until hover */
+	/* Toggle for chromeless */
 	@media (-moz-bool-pref: "uc.chromeless") {
 		#sidebar-box {	
 			--uc-sidebar-width: 0px !important;
 		}
 		#sidebar-header,
-		#sidebar{
+		#sidebar {
 			min-width: 6px !important; /* Adjust Hover Area */
 			opacity: 0%;
-			transition: opacity
-						var(--uc-autohide-transition-duration)
-						var(--uc-autohide-transition-type)
-						var(--uc-autohide-sidebar-delay),
-						min-width var(--uc-autohide-transition-duration)
-						var(--uc-autohide-transition-type)
-						var(--uc-autohide-sidebar-delay) !important;
+			transition: opacity var(--uc-transition-global), min-width var(--uc-transition-global) !important;
 		}
 		#sidebar-box:hover > #sidebar-header,
-		#sidebar-box:hover > #sidebar{
+		#sidebar-box:hover > #sidebar {
 			min-width: var(--uc-sidebar-hover-width) !important;
 			opacity: 95% !important;
 			transition-delay: 0ms !important;
 		}
+		.titlebar-buttonbox-container {
+			top: -20px;
+			right: -20px;
+		}
+		.titlebar-buttonbox-container:hover { 
+			top: 0px;
+			right: 0px;
+		}
 	}
 }
-	/* Controls hover area size - Shifts hidden navbar down for hover detection */
+	/* Controls nav-bar hover area size - Shifts hidden navbar down for hover detection */
 #nav-bar {
     transform: translateY(-28px);
 }
@@ -114,7 +118,7 @@
 	-moz-window-dragging: drag;
 }
 #zoom-controls separator,
-	/* Removes left and right spacers in toolbar & Sidebar close button */
+	/* Removes left and right spacers in toolbar & sidebar close button */
 #sidebar-close,
 .titlebar-spacer[type="pre-tabs"],
 .titlebar-spacer[type="post-tabs"],
@@ -131,7 +135,7 @@
 #urlbar-background {
 	opacity: 0.85;
 }
-	/* Collapses & Expands Windows Controls */
+	/* Auto Collapses/Expands Windows Controls */
 .titlebar-restore,
 .titlebar-max,
 .titlebar-close { 
@@ -141,7 +145,7 @@
 .titlebar-buttonbox-container:hover .titlebar-restore,
 .titlebar-buttonbox-container:hover .titlebar-max,
 .titlebar-buttonbox-container:hover .titlebar-close,
-.titlebar-buttonbox-container:hover .titlebar-button{
+.titlebar-buttonbox-container:hover .titlebar-button {
 	visibility: visible !important;
 	opacity: 1 !important;
 }
@@ -160,10 +164,24 @@
 		margin: -.6em 0 .5em !important;
 	}
 }
+	/* Testing Native vertical tabs functionality */
 @media (-moz-bool-pref: "sidebar.verticalTabs")	{
 	/* Remove revamp sidebar buttons */
 	.tools-and-extensions.actions-list,
 	.bottom-actions {
 		display: none !important;
 	}
+	box#sidebar-main {
+		position: relative !important;
+		transform: translateX(240px) !important;
+		opacity: 0% !important;
+		transition: opacity var(--uc-transition-global), transform var(--uc-transition-global) !important;
+	}
+	box#sidebar-main:hover {
+		transition-delay: 0ms !important;
+		opacity: 95% !important;
+		transform: translateX(0px) !important;
+	}
+	stack.browserStack { margin-right: -250px !important; }
 }
+	
