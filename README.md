@@ -1,30 +1,34 @@
-# userChrome.css
-Custom userChrome Firefox files
-Sidebery Required
-
-Features:
+# userChrome
+Custom userChrome Firefox files  
+Sidebery Extension Required  
+https://github.com/mbnuqw/sidebery 
+## Features:
 - Autohide main toolbar
 - Autohide Sidebery
-- Hides/Unhides native tab bar on Sidebery active state (Set sidebery preface setting to "?? ")
-- Shows full Sidebery when maximized if screensize is > 1200px
-- Toggle to disable Full Sidebery when maximized (uc.smalltabs)
-- Toggle for completely chromeless experience (uc.chromeless)
+- Hides/Unhides native tab bar when Sidebery is active ( Sidebery preface setting not needed anymore )
+- Shows Full Sidebery when maximized if screensize is > 1200px wide
+- Toggle to disable Full Sidebery when maximized (`uc.smalltabs`)
+- Toggle for completely chromeless experience (`uc.chromeless`)
 
-about:config settings to add mentioned above as Boolean to toggle
-- uc.chromeless
-- uc.smalltabs
+#### `about:config` toggles to add
+```
+  uc.chromeless
+  uc.smalltabs
+```
+#### `about:config` settings to set
+```
+  toolkit.legacyUserProfileCustomizations.stylesheets = true
+  sidebar.verticalTabs = false
+  sidebar.revamp = false
+```
 
-about:config settings to set
-- sidebar.verticalTabs = false
-- sidebar.revamp = false
 
-
-Default Functionality
+## Default Functionality
 
 
 https://github.com/user-attachments/assets/4f3f6a3c-50bd-4f49-8739-b67d5778b2f4
 
-Chromless Experience
+## Chromless Experience
 
 
 
