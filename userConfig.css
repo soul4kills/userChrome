@@ -1,0 +1,18 @@
+:root,
+#sidebar-box {
+	--uc-sidebar-width: 38px; /* Set initial collapsed sidebar width */
+	--uc-sidebar-hover-width: 300px; /* Set uncollapsed width on hover */
+	--uc-autohide-sidebar-delay: 500ms;
+	--uc-autohide-transition-duration: 300ms;
+	--uc-autohide-transition-type: ease-in-out;
+	--uc-sidebar-hover-area: 6px;
+	--uc-navbar-hover-area: 10px;
+	/* Does not work because @media doesn't process var(), leaving for future */
+	--uc-min-width: 1747px;
+	--uc-max-width: 1749px;
+	--uc-maximized-min-width: 1200px;
+}
+/*
+	https://howbigismybrowser.com/
+	Use to determine viewport sizes for adjustmentsin userContent & userChrome
+*/

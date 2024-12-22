@@ -1,26 +1,25 @@
 @import url(chrome/autohide_main_toolbar.css);
 @import url(chrome/autohide_sidebar.css);
 @import url(chrome/drag_window_from_urlbar.css);
-/*@import url(mycolors.css);*/
+@import url(userConfig.css); /* Make adjustments to userConfig.css */
+/*@import url(userColors.css);*/
 	/* Sidebar - autohide_sidebar.css References */
 :root,
 #sidebar-box {
-	--uc-sidebar-width: 38px; /* Set initial sidebar width */
-	--uc-sidebar-hover-width: 300px; /* Set width on hover */
-	--uc-autohide-sidebar-delay: 500ms;
-	--uc-autohide-transition-duration: 300ms;
-	--uc-autohide-transition-type: ease-in-out;
+	transition: all var(--uc-transition-global);
+	transition-delay: -50ms !important;
+	
 }
 	/* Main Toolbar - autohide_main_toolbar.css References */
-:root {			
-	--uc-navbar-transform: -40px;
+:root {
 	--uc-autohide-toolbar-delay: var(--uc-autohide-sidebar-delay);
 	--uc-autohide-toolbar-duration: var(--uc-autohide-transition-duration);
 	--uc-transition-global: var(--uc-autohide-transition-duration) var(--uc-autohide-transition-type) var(--uc-autohide-sidebar-delay);
 }
 	/* Show full sidebar when maximized - Disabled if < 1200px wide */
-:root[sizemode="maximized"] {
-	@media (min-width: 1200px) {
+#main-window[sizemode="maximized"] {
+	/* Added for display rotation in mind which I often utilize - Adjustments may be needed for user specific screen size */
+	@media (min-width: 1200px) { 
 		#sidebar-box {
 		--uc-sidebar-width: var(--uc-sidebar-hover-width) !important;
 		}
@@ -31,6 +30,7 @@
 			--uc-sidebar-width: 38px !important;
 		}
 	}
+	/* Toggle for Chromeless Experience */
 	@media not (-moz-bool-pref: "uc.chromeless") {
 		#sidebar-header,
 		#sidebar {
@@ -44,15 +44,32 @@
 		visibility: collapse;
 	}
 	#TabsToolbar.browser-toolbar.browser-titlebar {
-		z-index: 10 !important;
+		z-index: 4 !important;
 	}
 	/* Positioning for window controls */
-	.titlebar-buttonbox-container { 
+	.titlebar-buttonbox-container {
 		display: block;
 		position: absolute;
-		top: 0px;
+		top: var(--uc-navbar-transform);
 		right: 0px;
-		visibility: visible !important;
+		visibility: visible;
+		transition: all var(--uc-transition-global);
+	}
+	.titlebar-button {
+		transition: all var(--uc-transition-global);
+		height: abs(var(--uc-navbar-transform));
+		width: 35px;
+	}
+	.titlebar-buttonbox-container:hover .titlebar-button {
+		background: var(--toolbar-bgcolor) !important;
+		transition-delay: -60ms;
+	}
+	.titlebar-buttonbox-container .titlebar-close:hover {
+		background: red !important;
+	}
+	#navigator-toolbox:hover .titlebar-buttonbox-container {
+		top: 0px;
+		transition-delay: -50ms;
 	}
 	/* Remove revamp sidebar toolbar */	
 	#sidebar-main {
@@ -62,15 +79,7 @@
 	/* Add padding for window controls */
 	#PanelUI-button,
 	#personal-bookmarks {
-		padding-right: 30px !important;
-	}
-	.titlebar-button { 
-		height: 40px;
-		width: 36px !important;
-	}
-	.titlebar-buttonbox-container:hover .titlebar-button {
-		transition: 500ms ease-in;
-		background: var(--toolbar-bgcolor) !important;
+		padding-right: 28px !important;
 	}
 	/* Toggle for chromeless */
 	@media (-moz-bool-pref: "uc.chromeless") {
@@ -79,9 +88,9 @@
 		}
 		#sidebar-header,
 		#sidebar {
-			min-width: 6px !important; /* Adjust Hover Area */
+			min-width: var(--uc-sidebar-hover-area) !important; /* Sidebar  Hover Area */
 			opacity: 0%;
-			transition: opacity var(--uc-transition-global), min-width var(--uc-transition-global) !important;
+			transition: all var(--uc-transition-global) !important;
 		}
 		#sidebar-box:hover > #sidebar-header,
 		#sidebar-box:hover > #sidebar {
@@ -89,19 +98,11 @@
 			opacity: 95% !important;
 			transition-delay: 0ms !important;
 		}
-		.titlebar-buttonbox-container {
-			top: -20px;
-			right: -20px;
-		}
-		.titlebar-buttonbox-container:hover { 
-			top: 0px;
-			right: 0px;
-		}
 	}
 }
 	/* Controls nav-bar hover area size - Shifts hidden navbar down for hover detection */
 #nav-bar {
-    transform: translateY(-28px);
+    transform: translateY(calc(var(--uc-navbar-transform) + var(--uc-navbar-hover-area))); /* Navbar Hover Area */
 }
 #PersonalToolbar {
 	height: 40px !important;
@@ -138,16 +139,13 @@
 	/* Auto Collapses/Expands Windows Controls */
 .titlebar-restore,
 .titlebar-max,
-.titlebar-close { 
+.titlebar-close {
 	visibility: collapse !important;
-	opacity: 0 !important;
 }
 .titlebar-buttonbox-container:hover .titlebar-restore,
 .titlebar-buttonbox-container:hover .titlebar-max,
-.titlebar-buttonbox-container:hover .titlebar-close,
-.titlebar-buttonbox-container:hover .titlebar-button {
+.titlebar-buttonbox-container:hover .titlebar-close {
 	visibility: visible !important;
-	opacity: 1 !important;
 }
 @media not (-moz-bool-pref: "sidebar.verticalTabs")	{
 	/* Shorter Tab Bar*/
@@ -175,7 +173,7 @@
 		position: relative !important;
 		transform: translateX(240px) !important;
 		opacity: 0% !important;
-		transition: opacity var(--uc-transition-global), transform var(--uc-transition-global) !important;
+		transition: all var(--uc-transition-global) !important;
 	}
 	box#sidebar-main:hover {
 		transition-delay: 0ms !important;

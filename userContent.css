@@ -1,18 +1,20 @@
-@import url(theme/website-newtab.css); /* New tab page */
+@import url(theme/website-newtab.css);/* New tab page */
+@import url(userConfig.css); /* Make adjustments to userConfig.css */
 	/* Sidebery - pop-in-page tab preview cosmetic changes */
 div.popup:has(.header) {
 	background: transparent !important;
 	box-shadow: transparent 0 0 0 0 !important;
+	right: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)) !important;
 }
 	/* Sidebery - fix pop-in-page tab preview alignment - Specifically when maximized */
-@media (max-width: 1749px) and (min-width: 1747px) {
+@media (width: 1748px) { /* Adjustments may be needed for user specific screen size */
 	div.popup:has(.header) {
-		left: -300px !important;
+		right: 0px !important;
 	}
 }
-	/* Sidebery - tab preview fix  when uc.chromeless is toggled to true */
+	/* Sidebery - tab preview fix alignment when uc.chromeless is toggled to true */
 @media (-moz-bool-pref: "uc.chromeless") {
 	div.popup:has(.header) {
-		left: -600px !important;
+		right: var(--uc-sidebar-hover-width) !important;
 	}
 }
