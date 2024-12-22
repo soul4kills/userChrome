@@ -1,20 +1,24 @@
 @import url(theme/website-newtab.css);/* New tab page */
 @import url(userConfig.css); /* Make adjustments to userConfig.css */
+	/* IMPORTANT Choose LEFT or RIGHT in Sidebery "Tab Preview - Sidebar Side" */
 	/* Sidebery - pop-in-page tab preview cosmetic changes */
 div.popup:has(.header) {
 	background: transparent !important;
 	box-shadow: transparent 0 0 0 0 !important;
-	right: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)) !important;
+		@media not (-moz-bool-pref: "sidebar.position_start") { right: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)) !important;}
+		@media (-moz-bool-pref: "sidebar.position_start") { left: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)) !important;}
 }
 	/* Sidebery - fix pop-in-page tab preview alignment - Specifically when maximized */
 @media (width: 1748px) { /* Adjustments may be needed for user specific screen size */
 	div.popup:has(.header) {
-		right: 0px !important;
+		@media not (-moz-bool-pref: "sidebar.position_start") { right: 0px !important; }
+		@media (-moz-bool-pref: "sidebar.position_start") { left: 0px !important; }
 	}
 }
 	/* Sidebery - tab preview fix alignment when uc.chromeless is toggled to true */
 @media (-moz-bool-pref: "uc.chromeless") {
 	div.popup:has(.header) {
-		right: var(--uc-sidebar-hover-width) !important;
+		@media not (-moz-bool-pref: "sidebar.position_start") { right: var(--uc-sidebar-hover-width) !important; }
+		@media (-moz-bool-pref: "sidebar.position_start") { left: var(--uc-sidebar-hover-width) !important; }
 	}
 }
