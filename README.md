@@ -1,9 +1,10 @@
 # userChrome
-Custom userChrome Firefox files  
+Custom Firefox files with a focused on minimizing visual UI elements until it's needed. Autohide Everything!  
+  
 Sidebery Extension Required  
 https://github.com/mbnuqw/sidebery 
 ## Features:
-- Autohide main toolbar
+- Autohide Main Toolbar
 - Autohide Sidebery
 - Hides/Unhides native tab bar when Sidebery is active ( Sidebery preface setting not needed anymore )
 - Shows Full Sidebery when maximized if screensize is > 1200px wide
