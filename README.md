@@ -1,5 +1,5 @@
 # userChrome
-Custom Firefox files with a focused on minimizing visual UI elements until it's needed. Autohide Everything!  
+Custom Firefox files with a focus on minimizing visual UI elements until it's needed. Autohide Everything!  
   
 Sidebery Extension Required  
 https://github.com/mbnuqw/sidebery 
