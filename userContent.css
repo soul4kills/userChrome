@@ -9,7 +9,7 @@ div.popup:has(.header) {
 		@media (-moz-bool-pref: "sidebar.position_start") { left: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)) !important;}
 }
 	/* Sidebery - fix pop-in-page tab preview alignment - Specifically when maximized */
-@media (width: 1748px) { /* Adjustments may be needed for user specific screen size */
+@media (width: 1748px), (-moz-bool-pref: "uc.full.tabs") { /* Adjustments may be needed for user specific screen size */
 	div.popup:has(.header) {
 		@media not (-moz-bool-pref: "sidebar.position_start") { right: 0px !important; }
 		@media (-moz-bool-pref: "sidebar.position_start") { left: 0px !important; }
