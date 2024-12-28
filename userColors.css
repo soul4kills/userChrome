@@ -1,0 +1,52 @@
+:root {
+  --tab-selected-outline-color: rgba(255, 100, 244, 0.5199999809265137) !important;
+  --lwt-accent-color: rgb(30, 32, 48)!important;
+  --lwt-text-color: rgba(202, 211, 245) !important;
+  --arrowpanel-background: rgba(30, 32, 48, 0.8500000238418579) !important;
+  --arrowpanel-color: rgb(202, 211, 245) !important;
+  --arrowpanel-border-color: rgba(255, 100, 244, 0.5199999809265137) !important;
+  --toolbar-field-background-color: rgba(24, 25, 38, 0.8999999761581421) !important;
+  --toolbar-bgcolor: rgb(36, 39, 58) !important;
+  --toolbar-color: rgb(202, 211, 245) !important;
+  --toolbar-field-color: rgb(202, 211, 245) !important;
+  --toolbar-field-border-color: rgba(255, 100, 244, 0.5199999809265137) !important;
+  --toolbar-field-focus-background-color: rgba(48, 52, 70, 1) !important;
+  --toolbar-field-focus-color: rgb(202, 211, 245) !important;
+  --toolbar-field-focus-border-color: rgba(255, 100, 244, 0.5199999809265137) !important;
+  --lwt-toolbar-field-highlight: rgba(186, 187, 241, 1) !important;
+  --lwt-toolbar-field-highlight-text: rgb(48, 52, 70) !important;
+  --newtab-background-color: rgb(24, 25, 38) !important;
+  --newtab-text-primary-color: rgb(198, 208, 245) !important;
+  --lwt-accent-color-inactive: rgb(35, 38, 52) !important;
+  --lwt-background-alignment: top !important;
+  --lwt-background-tiling: repeat !important;
+  --tab-loading-fill: rgb(186, 187, 241) !important;
+  --tab-selected-bgcolor: rgb(48, 52, 70) !important;
+  --tab-selected-textcolor: rgb(198, 208, 245) !important;
+  --lwt-tab-line-color: rgba(255, 100, 244, 0.5199999809265137) !important;
+  --lwt-background-tab-separator-color: rgb(186, 187, 241) !important;
+  --toolbarseparator-color: rgb(186, 187, 241) !important;
+  --chrome-content-separator-color: rgb(48, 52, 70) !important;
+  --toolbarbutton-icon-fill: rgb(186, 187, 241) !important;
+  --lwt-toolbarbutton-icon-fill-attention: rgb(186, 187, 241) !important;
+  --toolbarbutton-active-background: rgb(115, 121, 148) !important;
+  --urlbarView-highlight-background: rgb(115, 121, 148) !important;
+  --urlbarView-highlight-color: rgb(198, 208, 245) !important;
+  --sidebar-background-color: rgb(48, 52, 70) !important;
+  --sidebar-text-color: rgb(198, 208, 245) !important;
+  --sidebar-border-color: rgb(48, 52, 70) !important;
+  --tabpanel-background-color: rgb(24, 25, 38) !important;
+}
+:root,
+#navigator-toolbox {
+  background-color: var(--lwt-accent-color) !important;
+  color: white !important;
+  
+  &:-moz-window-inactive {
+    background-color: var(--lwt-accent-color) !important;
+    color: white !important;
+  }
+}
+.titlebar-button {
+  color: var(--toolbar-color) !important;
+}

@@ -2,11 +2,11 @@
 @import url(chrome/autohide_sidebar.css);
 @import url(chrome/drag_window_from_urlbar.css);
 @import url(userConfig.css); /* Make adjustments to userConfig.css */
-/*@import url(userColors.css);*/
+@import url(userColors.css);
 :root,
 #sidebar-box {
 	transition: all var(--uc-transition-global);
-	transition-delay: 0ms !important;
+	transition-delay: 0ms;
 }
 	/* Main Toolbar - autohide_main_toolbar.css References */
 :root {
@@ -27,7 +27,7 @@
 	/* Enable full sidebar in Windowed Mode */
 @media (-moz-bool-pref: "uc.full.tabs") {
 	#sidebar-box {
-		--uc-sidebar-width: var(--uc-sidebar-hover-width) !important;
+		--uc-sidebar-width: var(--uc-sidebar-hover-width);
 	}
 }
 	/* Show full sidebar when maximized - Disabled if < 1200px wide */
@@ -35,7 +35,7 @@
 	/* Added for display rotation in mind which I often utilize - Adjustments may be needed for user specific screen size */
 	@media (min-width: 1153px) {
 		#sidebar-box {
-		--uc-sidebar-width: var(--uc-sidebar-hover-width) !important;
+		--uc-sidebar-width: var(--uc-sidebar-hover-width);
 		}
 	}
 	/* Toggle collapsed sidebar when maximized */
@@ -48,7 +48,7 @@
 	@media not (-moz-bool-pref: "uc.chromeless") {
 		#sidebar-header,
 		#sidebar {
-			opacity: 95% !important;
+			opacity: 95%;
 		}
 	}
 }
@@ -57,13 +57,14 @@
 	/* Removes 1px gap from the top */
 	stack.browserStack,
 	#sidebar-box {
-		margin-top: -1px !important;
+		margin-top: -1px;
 	}
 	.titlebar-button {
 		height: abs(var(--uc-navbar-transform));
 		width: 35px;
 		transition: all var(--uc-transition-global);
-		transition-timing-function: ease !important;
+		transition-timing-function: ease;
+		opacity: 30%;
 	}
 	/* Positioning for window controls */
 	.titlebar-buttonbox-container {
@@ -71,25 +72,27 @@
 		position: absolute;
 		top: calc(var(--uc-navbar-transform) + var(--uc-navbar-hover-area));
 		right: 0px;
+		/*width: 35px;*/
 		visibility: visible;
 		transition: all var(--uc-transition-global);
-		transition-timing-function: ease !important;
-			:hover .titlebar-button {
-				background: var(--toolbar-bgcolor) !important;
-				transition-delay: 0ms;
-			}
-			.titlebar-close:hover {
-				background: red !important;
-			}
-	}
-	.titlebar-buttonbox-container .titlebar-close:hover {
-				background: red !important;
+		transition-timing-function: ease;
+		/*&:hover {
+			width: 105px;
+		}*/
+		:hover .titlebar-button {
+			background: var(--toolbar-bgcolor) !important;
+			transition-delay: 0ms;
+			opacity: 100%
+		}
+		.titlebar-close:hover {
+			background: red !important;
+		}
 	}
 	#TabsToolbar {
-		visibility: collapse !important;
-	}
-	#TabsToolbar.browser-toolbar.browser-titlebar {
-		z-index: 4 !important;
+		visibility: collapse;
+		&.browser-toolbar.browser-titlebar {
+			z-index: 4;
+		}
 	}
 	#navigator-toolbox:hover .titlebar-buttonbox-container {
 		top: 0px;
@@ -98,7 +101,7 @@
 	/* Add padding for window controls */
 	#PanelUI-button,
 	#personal-bookmarks {
-		padding-right: 28px !important;
+		padding-right: 28px;
 	}
 	/* Remove revamp sidebar toolbar */
 	#sidebar-main {
@@ -119,8 +122,8 @@
 				& > #sidebar-header,
 				& > #sidebar {
 					min-width: var(--uc-sidebar-hover-width) !important;
-					opacity: 95% !important;
-					transition-delay: 0ms !important;
+					opacity: 95%;
+					transition-delay: -100ms !important;
 				}
 			}
 		}
@@ -128,11 +131,12 @@
 }
 #nav-bar {
 	height: 40px !important;
-    transform: translateY(calc(var(--uc-navbar-transform) + var(--uc-navbar-hover-area))); /* Navbar Hover Area - Make Adjustments in userConfig.css */
+	border-top: 0 !important;
+	transform: translateY(calc(var(--uc-navbar-transform) + var(--uc-navbar-hover-area))); /* Navbar Hover Area - Make Adjustments in userConfig.css */
 }
 #urlbar-background {
 	opacity: 0.85;
-    border-radius: 6px !important;
+	border-radius: 6px !important;
 }
 #star-button-box,
 .url-page-action {
@@ -166,15 +170,13 @@
 #context-sendimage,
 #context-viewimageinfo,
 #context-inspect,
-#context-inspect-a11y {
-	display: none !important;
-}
-	/* Auto Collapse/Expand Windows Controls */
+#context-inspect-a11y,
 .titlebar-restore,
 .titlebar-max,
 .titlebar-close {
 	visibility: collapse !important;
 }
+	/* Auto Collapse/Expand Windows Controls */
 .titlebar-buttonbox-container:hover {
 	.titlebar-restore,
 	.titlebar-max,
@@ -186,11 +188,11 @@
 	/* Shorter Tab Bar*/
 	:root {
 		--tab-max-height: 24px !important;
-		--tab-min-height: 0px !important;
+		--tab-min-height: 24px !important;
 		--urlbar-toolbar-height: var(--tab-max-height) !important;
 	}
 	.tab-background {
-		margin: 0 !important;
+		margin: 0px !important;
 	}
 	.tab-secondary-label {
 		font-size: .5em !important;
