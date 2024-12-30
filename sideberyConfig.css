@@ -1,0 +1,89 @@
+	/* IMPORTANT Choose LEFT or RIGHT in Sidebery "Tab Preview - Sidebar Side" */
+	/* Sidebery - pop-in-page tab preview fix/cosmetic changes */
+div.popup[style*="--fg"][style*="--bg"] {
+	border: 1px solid rgba(255, 100, 244, 0.52);
+	&:has(div[style*="position: absolute; width: calc(100% + 0px); height: 100%; top: 0px; left: 0px; background-image: none;"]) {
+		visibility: collapse !important;
+	}
+	.header {
+		visibility: collapse !important;
+	}
+	@media not (-moz-bool-pref: "sidebar.position_start") { right: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)) !important;}
+	@media (-moz-bool-pref: "sidebar.position_start") { left: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)) !important;}
+}
+	/* Sidebery - fix pop-in-page tab preview alignment - Specifically when maximized */
+@media (width: 1748px), (-moz-bool-pref: "uc.full.tabs") { /* Adjustments may be needed for user specific screen size */
+	div.popup[style*="--fg"][style*="--bg"] {
+		@media not (-moz-bool-pref: "sidebar.position_start") { right: 0px !important; }
+		@media (-moz-bool-pref: "sidebar.position_start") { left: 0px !important; }
+	}
+}
+	/* Sidebery - tab preview fix alignment when uc.chromeless is toggled to true */
+@media (-moz-bool-pref: "uc.chromeless") {
+	div.popup[style*="--fg"][style*="--bg"] {
+		@media not (-moz-bool-pref: "sidebar.position_start") { right: var(--uc-sidebar-hover-width) !important; }
+		@media (-moz-bool-pref: "sidebar.position_start") { left: var(--uc-sidebar-hover-width) !important; }
+	}
+}
+/*div[style*="position: relative; width: 100%;"]:has(div[style*="position: absolute; width: calc(100% + 0px); height: 100%; top: 0px; left: 0px; background-image: none;"]) {
+	height: fit-content !important;	
+}*/
+/* Sidebery Colors */
+div#root.root.Sidebar {
+--s-frame-bg: rgb(30, 32, 48) !important;
+--s-frame-fg: rgb(202, 211, 245) !important;
+--s-toolbar-bg: rgb(36, 39, 58) !important;
+--s-toolbar-fg: rgb(186, 187, 241) !important;
+--s-act-el-bg: rgb(48, 52, 70) !important;
+--s-act-el-fg: rgb(198, 208, 245) !important;
+--s-popup-bg: rgba(30, 32, 48, 0.85) !important;
+--s-popup-fg: rgb(202, 211, 245) !important;
+--s-popup-border: rgba(255, 100, 244, 0.52) !important;
+--s-act-el-border: rgba(255, 100, 244, 0.52) !important;
+--s-accent: rgba(255, 100, 244, 0.52) !important;
+}
+#sdbr_preview_root {
+--hbg: rgb(36, 39, 58) !important;
+--hfg: rgb(186, 187, 241) !important;
+--bg: rgb(36, 39, 58) !important;
+--fg: rgb(186, 187, 241) !important;
+}
+div#root.root.Sidebar {
+	.top-shadow {box-shadow: 0 1px 0px 0 rgba(255, 100, 244, 0.52),0 1px 12px 0 rgba(255, 100, 244, 0.52) !important;}
+	.bottom-shadow {box-shadow: 0 -1px 0px 0 rgba(255, 100, 244, 0.52),0 -1px 12px 0 rgba(255, 100, 244, 0.52) !important;}
+	.PinnedTabsBar { /* Wraps Pinned Icons */
+	overflow: hidden !important;
+	flex-wrap: nowrap!important;
+	}
+}
+/* Collapses content on overflow */
+/* Adjust styles according to sidebar width */
+@media screen and (max-width: 50px) { /* Activates on Collapse */
+	div#root.root.Sidebar {
+		--tabs-indent: unset !important;
+	}
+	div#root.root.Sidebar .ScrollBox > .scroll-container {
+		overflow: hidden !important;
+	}
+	div#root.root.Sidebar .Tab .audio {
+		left: 10px  !important;
+		transform: scale(.80) !important;
+		transform: translateY(4px)  !important;
+	}
+	div#root.root.Sidebar .audio {
+		z-index: 100 !important;
+		}
+	div#root.root.Sidebar .Tab .title {
+		visibility: collapse !important;
+	}
+}
+@media screen and (min-width: 50px) { /* Activates When not Collapsed */
+	div#root.root.Sidebar .Tab .audio {
+		left: 10px !important;
+		top: 4px !important;
+}
+/* revamp vertical tabs buttons *//*
+	.top-horizontal-box {
+		padding-right: 30px !important;
+}
+*/
