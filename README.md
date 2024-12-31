@@ -9,7 +9,7 @@ https://github.com/mbnuqw/sidebery
 - Hide/Unhide native tab bar when Sidebery is active ( Sidebery preface setting not required anymore )
 - Shows Full Sidebery when maximized if screensize is > 1200px wide
 - `userConfig.css` Consolidated adjustments of Personal Preferences here for conevenience
-- `userColors.css` Added for convenient Color Profile adjustments/removal
+- `userColors.css` Added for convenient Color Profile adjustments/removal (Inspired by Dracula Color Theme & a Flowlauncher Theme)
 - `sideberyConfig.css` Added to consolidate Sidebery cosmetic modifications/fixes
 
 #### `about:config` toggles to add
