@@ -21,7 +21,7 @@ div.popup[style*="--fg"][style*="--bg"] {
 		@media (-moz-bool-pref: "sidebar.position_start") { left: 0px !important; }
 	}
 }
-	/* Sidebery - tab preview fix alignment when uc.chromeless is toggled to true */
+	/* Tab preview fix alignment when uc.chromeless is toggled to true */
 @media (-moz-bool-pref: "uc.chromeless") {
 	div.popup[style*="--fg"][style*="--bg"] {
 		@media not (-moz-bool-pref: "sidebar.position_start") { right: var(--uc-sidebar-hover-width) !important; }
@@ -60,14 +60,14 @@ div#root.root.Sidebar {
 	.top-shadow[data-show="true"] {
 		z-index: 9999 !important;
 		border-radius: 50%;
-		transition: box-shadow 6000ms cubic-bezier(0.2, -2, 0.8, 6) 0ms !important;
 		box-shadow: 0 1px 0 0 rgba(255, 100, 244, 1),0 1px 80px 10px rgba(255, 100, 244, 0.60) !important;
+		@media (-moz-bool-pref:"uc.shadow.flicker") { transition: box-shadow 6000ms cubic-bezier(0.2, -2, 0.8, 6) 0ms !important; }
 	}
 	.bottom-shadow[data-show="true"] {
 		z-index: 9999 !important;
 		border-radius: 50%;
-		transition: box-shadow 2000ms cubic-bezier(0.2, -2, 0, 3) 0ms !important;
 		box-shadow: 0 -1px 0 0 rgba(255, 100, 244, 1),0 -1px 80px 10px rgba(255, 100, 244, 0.60) !important;
+		@media (-moz-bool-pref:"uc.shadow.flicker") { transition: box-shadow 2000ms cubic-bezier(0.2, -2, 0, 3) 0ms !important; }
 	}
 	.scroll-container { padding: 1px 0 0 0 !important; }
 	.PinnedTabsBar { /* nowrap for Pinned Icons */
