@@ -36,6 +36,8 @@
   --sidebar-text-color: rgb(198, 208, 245) !important;
   --sidebar-border-color: rgb(48, 52, 70) !important;
   --tabpanel-background-color: rgb(24, 25, 38) !important;
+  --toolbox-non-lwt-textcolor: rgb(186, 187, 241) !important;
+  --toolbox-non-lwt-textcolor-inactive: rgb(125, 131, 156) !important;
 }
 #navigator-toolbox {
   background-color: var(--lwt-accent-color) !important;
@@ -50,4 +52,17 @@
 }
 .titlebar-button {
   color: var(--toolbar-color) !important;
+}
+menupopup, menu,  panel {
+  --panel-background: rgb(36, 39, 58, 0.85) !important;
+  --panel-border-color: var(--toolbar-field-border-color) !important;
+  --panel-shadow: 0 1px 12px 0 rgba(255, 100, 244, 0.52);
+ /* --panel-item-hover-bgcolor: red !important; */
+}
+/* This changes the color when hovering over items of some right click context menus */
+menubar > menu[_moz-menuactive="true"],
+menupopup > menu[_moz-menuactive="true"],
+popup > menu[_moz-menuactive="true"],
+menuitem[_moz-menuactive="true"] {
+  background-color: rgb(56, 60, 77, 0.76) !important;
 }
