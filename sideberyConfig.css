@@ -1,9 +1,11 @@
 	/* IMPORTANT Choose LEFT or RIGHT in Sidebery "Tab Preview - Sidebar Side" */
 	/* Sidebery - pop-in-page tab preview fix/cosmetic changes */
 div.popup[style*="--fg"][style*="--bg"] {
-	border: 1px solid rgba(255, 100, 244, 0.52);
-	&:has(div[style*="position: absolute; width: calc(100% + 0px); height: 100%; top: 0px; left: 0px; background-image: none;"]) {
-		visibility: collapse !important;
+	visibility: collapse;
+		&:has(div[style*="background-image: url("][style*="opacity: 1;"]) {
+		visibility: visible !important;
+		border: 1px solid rgba(255, 100, 244, 0.52);
+		box-shadow: 0 0 12px 0 rgba(255, 100, 244, 0.52)!important;
 	}
 	.header {
 		visibility: collapse !important;
@@ -29,6 +31,12 @@ div.popup[style*="--fg"][style*="--bg"] {
 	height: fit-content !important;	
 }*/
 /* Sidebery Colors */
+#sdbr_preview_root {
+--hbg: rgb(36, 39, 58) !important;
+--hfg: rgb(186, 187, 241) !important;
+--bg: rgb(36, 39, 58) !important;
+--fg: rgb(186, 187, 241) !important;
+}
 div#root.root.Sidebar {
 --s-frame-bg: rgb(30, 32, 48) !important;
 --s-frame-fg: rgb(202, 211, 245) !important;
@@ -42,25 +50,20 @@ div#root.root.Sidebar {
 --s-act-el-border: rgba(255, 100, 244, 0.52) !important;
 --s-accent: rgba(255, 100, 244, 0.52) !important;
 }
-#sdbr_preview_root {
---hbg: rgb(36, 39, 58) !important;
---hfg: rgb(186, 187, 241) !important;
---bg: rgb(36, 39, 58) !important;
---fg: rgb(186, 187, 241) !important;
-}
 div#root.root.Sidebar {
 	.top-shadow {box-shadow: 0 1px 0px 0 rgba(255, 100, 244, 0.52),0 1px 12px 0 rgba(255, 100, 244, 0.52) !important;}
 	.bottom-shadow {box-shadow: 0 -1px 0px 0 rgba(255, 100, 244, 0.52),0 -1px 12px 0 rgba(255, 100, 244, 0.52) !important;}
 	.PinnedTabsBar { /* Wraps Pinned Icons */
-	overflow: hidden !important;
-	flex-wrap: nowrap!important;
+		overflow: hidden !important;
+		flex-wrap: nowrap!important;
 	}
 }
-/* Collapses content on overflow */
-/* Adjust styles according to sidebar width */
+	/* Collapses content on overflow */
+	/* Adjust styles according to sidebar width */
 @media screen and (max-width: 50px) { /* Activates on Collapse */
 	div#root.root.Sidebar {
 		--tabs-indent: unset !important;
+		--tabs-normal-fg: unset !important;
 	}
 	div#root.root.Sidebar .ScrollBox > .scroll-container {
 		overflow: hidden !important;

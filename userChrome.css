@@ -129,6 +129,9 @@
 		}
 	}
 }
+toolbarspring {
+	cursor: grab;
+}
 #nav-bar {
 	height: 40px !important;
 	border-top: 0 !important;
@@ -152,6 +155,7 @@
 	height: 38px !important;
 	background: var(--toolbar-bgcolor) !important;
 	-moz-window-dragging: drag;
+	cursor: grab;
 }
 #sidebar-box {
 	z-index: 1 !important;

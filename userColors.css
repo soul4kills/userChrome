@@ -39,12 +39,14 @@
 }
 #navigator-toolbox {
   background-color: var(--lwt-accent-color) !important;
-  color: white !important;
   
   &:-moz-window-inactive {
   background-color: var(--lwt-accent-color) !important;
-  color: white !important;
   }
+}
+#sidebar,
+#sidebar-header {
+  border-inline: 0px solid rgba(255, 100, 244, 0.52) !important;
 }
 .titlebar-button {
   color: var(--toolbar-color) !important;
