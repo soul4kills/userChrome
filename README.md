@@ -11,7 +11,7 @@ https://github.com/mbnuqw/sidebery
 - `userConfig.css` Consolidated adjustments of Personal Preferences here for conevenience
 - `userColors.css` Added for convenient Color Profile adjustments/removal (Inspired by Dracula Color Theme & a Flowlauncher Theme)
 - `sideberyConfig.css` Added to consolidate Sidebery cosmetic modifications/fixes
-
+- `uc.shadow.flicker` Added Cool aesthetic indicator for overflowing tabs in Sidebery. Flickers like a real fluorescent light. Off by default. It's a resource hog to animate.    
 #### `about:config` toggles to add
 ```
   //Toggle for Chromeless Experience
@@ -22,6 +22,9 @@ https://github.com/mbnuqw/sidebery
 
   //Toggle for Full Tabs when Windowed
   uc.full.tabs
+
+  //Toggle for Shadow Flicker
+  uc.shadow.flicker
 ```
 #### `about:config` settings to set
 ```
