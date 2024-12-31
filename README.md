@@ -1,20 +1,27 @@
-# userChrome
+# Firefox userChrome
 Custom Firefox files with a focus on minimizing visual UI elements until it's needed. Autohide Everything!  
   
-Sidebery Extension Required  
+Only works with Sidebery installed - Sidebery Extension Required  
 https://github.com/mbnuqw/sidebery 
 ## Features:
 - Autohide Main Toolbar
 - Autohide Sidebery
-- Hides/Unhides native tab bar when Sidebery is active ( Sidebery preface setting not needed anymore )
+- Hide/Unhide native tab bar when Sidebery is active ( Sidebery preface setting not required anymore )
 - Shows Full Sidebery when maximized if screensize is > 1200px wide
-- Toggle to disable Full Sidebery when maximized (`uc.smalltabs`)
-- Toggle for completely chromeless experience (`uc.chromeless`)
+- `userConfig.css` Consolidated adjustments of Personal Preferences here for conevenience
+- `userColors.css` Added for convenient Color Profile adjustments/removal
+- `sideberyConfig.css` Added to consolidate Sidebery cosmetic modifications/fixes
 
 #### `about:config` toggles to add
 ```
+  //Toggle for Chromeless Experience
   uc.chromeless
-  uc.smalltabs
+
+  //Toggle for Collapsed Tabs when Maximized
+  uc.collapse.tabs
+
+  //Toggle for Full Tabs when Windowed
+  uc.full.tabs
 ```
 #### `about:config` settings to set
 ```
@@ -29,7 +36,7 @@ https://github.com/mbnuqw/sidebery
 
 https://github.com/user-attachments/assets/4f3f6a3c-50bd-4f49-8739-b67d5778b2f4
 
-## Chromless Experience
+## Chromeless Experience
 
 
 
