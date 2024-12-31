@@ -4,8 +4,8 @@ div.popup[style*="--fg"][style*="--bg"] {
 	visibility: collapse;
 		&:has(div[style*="background-image: url("][style*="opacity: 1;"]) {
 		visibility: visible !important;
-		border: 1px solid rgba(255, 100, 244, 0.52);
-		box-shadow: 0 0 12px 0 rgba(255, 100, 244, 0.52)!important;
+		border: 1px solid rgba(255, 100, 244, 0.50);
+		box-shadow: 0 1px 20px -5px rgba(255, 100, 244, 0.60)!important;
 	}
 	.header {
 		visibility: collapse !important;
@@ -48,11 +48,16 @@ div#root.root.Sidebar {
 --s-accent: rgba(255, 100, 244, 0.52) !important;
 }
 div#root.root.Sidebar {
-	.top-shadow {box-shadow: 0 1px 0px 0px rgba(255, 100, 244, 0.90),0 1px 80px 10px rgba(255, 100, 244, 0.60) !important; z-index: 9999 !important; border-radius: 50%; transition: opacity 1000ms cubic-bezier(0.2,-2,0.8,2) 200ms !important;}
-	.bottom-shadow {box-shadow: 0 -1px 0px 0px rgba(255, 100, 244, 0.90),0 -1px 80px 10px rgba(255, 100, 244, 0.60) !important; z-index: 9999 !important; border-radius: 50%; transition: opacity 1000ms cubic-bezier(0.2,-2,0.8,2) 200ms !important;}
+	--tabs-activated-shadow: 0 0px 0px 1px rgba(255, 100, 244, 0.50),0 1px 20px -5px rgba(255, 100, 244, 0.60) !important;
+	.top-shadow {box-shadow: 0 1px 0px 0px rgba(255, 100, 244, 1),0 1px 80px 10px rgba(255, 100, 244, 0.60) !important; z-index: 9999 !important; border-radius: 50%; transition: opacity 1000ms cubic-bezier(0.2,-2,0.8,2) 0ms !important;}
+	.bottom-shadow {box-shadow: 0 -1px 0px 0px rgba(255, 100, 244, 1),0 -1px 80px 10px rgba(255, 100, 244, 0.60) !important; z-index: 9999 !important; border-radius: 50%; transition: opacity 1000ms cubic-bezier(0.2,-2,0.8,2) 0ms !important;}
+	.scroll-container {padding: 1px 0 0 0 !important;}
 	.PinnedTabsBar { /* Wraps Pinned Icons */
-		overflow: hidden !important;
+		overflow-x: scroll !important;
+		overflow: scroll !important;
 		flex-wrap: nowrap!important;
+		padding: 1px 3px 6px 3px !important;
+		scrollbar-width: 1px !important;
 	}
 }
 	/* Collapses content on overflow */
