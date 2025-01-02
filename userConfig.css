@@ -1,3 +1,4 @@
+@import url(userColors.css);
 :root,
 #sidebar-box {
 	--uc-sidebar-width: 38px; /* Set initial collapsed sidebar width */

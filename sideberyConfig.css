@@ -1,33 +1,36 @@
-	/* IMPORTANT Choose LEFT or RIGHT in Sidebery "Tab Preview - Sidebar Side" */
+	/* Begin Tab Preview Crap - HACKING to get alignment of tab preview aligned correctly for Sidebery */
 	/* Pop-in-page tab preview fix/cosmetic changes */
 div.popup[style*="--fg"][style*="--bg"] {
 	visibility: collapse;
 		&:has(div[style*="background-image: url("][style*="opacity: 1;"]) {
 		visibility: visible !important;
-		border: 1px solid rgba(255, 100, 244, 0.50);
+		border: 1px solid var(--tab-selected-outline-color);
 		border-radius: 50%;
-		box-shadow: 0 1px 20px -5px rgba(255, 100, 244, 0.60)!important;
+		box-shadow: 0 1px 20px -5px var(--tab-selected-outline-color)!important;
 	}
-	.header {
-		visibility: collapse !important;
-	}
-	@media not (-moz-bool-pref: "sidebar.position_start") { right: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)) !important;}
-	@media (-moz-bool-pref: "sidebar.position_start") { left: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)) !important;}
-}
-	/* Fix pop-in-page tab preview alignment - Specifically when maximized */
-@media (width: 1748px), (-moz-bool-pref: "uc.full.tabs") { /* Adjustments may be needed for user specific screen size */
-	div.popup[style*="--fg"][style*="--bg"] {
-		@media not (-moz-bool-pref: "sidebar.position_start") { right: 0px !important; }
-		@media (-moz-bool-pref: "sidebar.position_start") { left: 0px !important; }
-	}
+	.header { visibility: collapse !important; }
+	@media not (-moz-bool-pref: "sidebar.position_start") { left: auto !important;  right: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)) !important;}
+	@media (-moz-bool-pref: "sidebar.position_start") { right: auto !important; left: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)) !important; }
 }
 	/* Tab preview fix alignment when uc.chromeless is toggled to true */
 @media (-moz-bool-pref: "uc.chromeless") {
 	div.popup[style*="--fg"][style*="--bg"] {
-		@media not (-moz-bool-pref: "sidebar.position_start") { right: var(--uc-sidebar-hover-width) !important; }
-		@media (-moz-bool-pref: "sidebar.position_start") { left: var(--uc-sidebar-hover-width) !important; }
+		@media not (-moz-bool-pref: "sidebar.position_start") { left: auto !important; right: var(--uc-sidebar-hover-width) !important;}
+		@media (-moz-bool-pref: "sidebar.position_start") { right: auto !important; left: var(--uc-sidebar-hover-width) !important;}
 	}
 }
+	/* Fix pop-in-page tab preview alignment - Specifically when maximized or uc.full.tabs is true */
+@media (width: 1748px), (-moz-bool-pref: "uc.full.tabs") { /* Adjustments  needed for user specific screen size */
+	div.popup[style*="--fg"][style*="--bg"]{
+		@media not (-moz-bool-pref: "sidebar.position_start") { left: auto !important; right: 0px !important;}
+		@media (-moz-bool-pref: "sidebar.position_start") { right: auto !important; left: 0px !important;}
+	}
+}
+#sdbr_preview_root {
+	@media not (-moz-bool-pref: "sidebar.position_start") { left: auto !important; right: 0px !important; }
+	@media (-moz-bool-pref: "sidebar.position_start") { right: auto !important; left: 0px !important; }
+}
+/* End Tab Preview Crap */
 /* Collapses content on overflow */
 /* Adjust styles according to sidebar width */
 @media screen and (max-width: 50px) { /* Activates on Collapse */
@@ -35,19 +38,14 @@ div.popup[style*="--fg"][style*="--bg"] {
 		--tabs-indent: unset !important;
 		--tabs-normal-fg: unset !important;
 	}	
-	div#root.root.Sidebar .ScrollBox > .scroll-container {
-		overflow: hidden !important;
-	}
+	div#root.root.Sidebar .audio { z-index: 100 !important; }
+	div#root.root.Sidebar .ScrollBox > .scroll-container { overflow: hidden !important;	}
+	div#root.root.Sidebar .Tab .title { visibility: collapse !important;}
 	div#root.root.Sidebar .Tab .audio {
 		left: 10px  !important;
 		transform: scale(.80) !important;
 		transform: translateY(4px)  !important;
-	}
-	div#root.root.Sidebar .audio {
-		z-index: 100 !important;
-	}
-	div#root.root.Sidebar .Tab .title {
-		visibility: collapse !important;
+		fill: var(--tabs-activated-fg);
 	}
 }
 @media screen and (min-width: 50px) { /* Activates When not Collapsed */
@@ -60,44 +58,44 @@ div#root.root.Sidebar {
 	.top-shadow[data-show="true"] {
 		z-index: 9999 !important;
 		border-radius: 50%;
-		box-shadow: 0 1px 0 0 rgba(255, 100, 244, 1),0 1px 80px 10px rgba(255, 100, 244, 0.60) !important;
-		@media (-moz-bool-pref:"uc.shadow.flicker") { transition: box-shadow 6000ms cubic-bezier(0.2, -2, 0.8, 6) 0ms !important; }
+		box-shadow: 0 1px 0 0 rgba(255, 100, 244, 1),0 1px 80px 10px var(--tab-selected-outline-color) !important;
+		@media (-moz-bool-pref:"uc.shadow.flicker") { transition: all 6000ms cubic-bezier(0.2, -2, 0.8, 10) 0ms !important; }
 	}
 	.bottom-shadow[data-show="true"] {
 		z-index: 9999 !important;
 		border-radius: 50%;
-		box-shadow: 0 -1px 0 0 rgba(255, 100, 244, 1),0 -1px 80px 10px rgba(255, 100, 244, 0.60) !important;
-		@media (-moz-bool-pref:"uc.shadow.flicker") { transition: box-shadow 2000ms cubic-bezier(0.2, -2, 0, 3) 0ms !important; }
+		box-shadow: 0 -1px 0 0 rgba(255, 100, 244, 1),0 -1px 80px 10px var(--tab-selected-outline-color) !important;
+		@media (-moz-bool-pref:"uc.shadow.flicker") { transition: all 2000ms cubic-bezier(0.2, -2, 0.8, 6) 0ms !important; }
 	}
 	.scroll-container { padding: 1px 0 0 0 !important; }
 	.PinnedTabsBar { /* nowrap for Pinned Icons */
 		overflow-x: scroll !important;
 		overflow: scroll !important;
 		flex-wrap: nowrap!important;
-		padding: 1px 3px 6px 3px !important;
+		padding: 6px 3px 6px 3px !important;
 		scrollbar-width: 1px !important;
 	}
-	.Tab[data-active="true"] { 
-		.body { box-shadow: 0 0 0 1px rgba(255, 100, 244, 0.50),0 1px 20px -5px rgba(255, 100, 244, 0.60) !important; }
-	}
+	.Tab[data-active="true"] .body { box-shadow: 0 0 0 1px var(--tab-selected-outline-color),0 1px 20px -5px var(--tab-selected-outline-color) !important; }
+	.top-horizontal-box { margin-bottom: 0px !important; }
+	.NavigationBar .nav-item .audio { background-color: unset !important;}
 }
 	/* Sidebery Colors */
 #sdbr_preview_root {
---hbg: rgb(36, 39, 58) !important;
---hfg: rgb(186, 187, 241) !important;
---bg: rgb(36, 39, 58) !important;
---fg: rgb(186, 187, 241) !important;
+--hbg: var(--toolbar-bgcolor) !important;
+--hfg: var(--lwt-toolbar-field-highlight) !important;
+--bg: var(--toolbar-bgcolor) !important;
+--fg: var(--lwt-toolbar-field-highlight) !important;
 }
 div#root.root.Sidebar {
---s-frame-bg: rgb(30, 32, 48) !important;
---s-frame-fg: rgb(202, 211, 245) !important;
---s-toolbar-bg: rgb(36, 39, 58) !important;
---s-toolbar-fg: rgb(186, 187, 241) !important;
---s-act-el-bg: rgb(48, 52, 70) !important;
---s-act-el-fg: rgb(198, 208, 245) !important;
---s-popup-bg: rgba(30, 32, 48, 0.85) !important;
---s-popup-fg: rgb(202, 211, 245) !important;
---s-popup-border: rgba(255, 100, 244, 0.52) !important;
---s-act-el-border: rgba(255, 100, 244, 0.52) !important;
---s-accent: rgba(255, 100, 244, 0.52) !important;
+--s-frame-bg: var(--lwt-accent-color) !important;
+--s-frame-fg: var(--lwt-text-color) !important;
+--s-toolbar-bg: var(--toolbar-bgcolor) !important;
+--s-toolbar-fg: var(--lwt-toolbar-field-highlight) !important;
+--s-act-el-bg: var(--tab-selected-bgcolor)!important;
+--s-act-el-fg: var(--newtab-text-primary-color) !important;
+--s-popup-bg: var(--arrowpanel-background) !important;
+--s-popup-fg: var( --lwt-text-color) !important;
+--s-popup-border: var(--tab-selected-outline-color) !important;
+--s-act-el-border: var(--tab-selected-outline-color) !important;
+--s-accent: var(--tab-selected-outline-color) !important;
 }

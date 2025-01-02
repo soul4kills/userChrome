@@ -2,7 +2,6 @@
 @import url(chrome/autohide_sidebar.css);
 @import url(chrome/drag_window_from_urlbar.css);
 @import url(userConfig.css); /* Make adjustments to userConfig.css */
-@import url(userColors.css);
 :root,
 #sidebar-box {
 	transition: all var(--uc-transition-global);
