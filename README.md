@@ -9,7 +9,7 @@ https://github.com/mbnuqw/sidebery
 - Hide/Unhide native tab bar when Sidebery is active ( Sidebery preface setting not required anymore )
 - Shows Full Sidebery when maximized if screensize is > 1200px wide
 - `userConfig.css` Consolidated adjustments of Personal Preferences here for conevenience
-- `userColors.css` Added for convenient Color Profile adjustments/removal (Inspired by Dracula Color Theme & a Flowlauncher Theme)
+- `userColors.css` Added for convenient Color Profile adjustments/removal (Inspired by Flowlauncher Theme Named Tokyo Night Storm)
 - `sideberyConfig.css` Added to consolidate Sidebery cosmetic modifications/fixes
 - `uc.shadow.flicker` Added Cool aesthetic indicator for overflowing tabs in Sidebery. Flickers like a real fluorescent light. Off by default. It's a resource hog to animate.    
 #### `about:config` toggles to add
