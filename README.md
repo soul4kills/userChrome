@@ -7,7 +7,7 @@ https://github.com/mbnuqw/sidebery
 - Autohide Main Toolbar
 - Autohide Sidebery
 - Hide/Unhide native tab bar when Sidebery is active ( Sidebery preface setting not required anymore )
-- Shows Full Sidebery when maximized if screensize is > 1200px wide
+- Shows Full Sidebery when maximized if screensize is > 1200px wide ( Adjustment required for user specific screen size )
 - `userConfig.css` Consolidated adjustments of Personal Preferences here for conevenience
 - `userColors.css` Added for convenient Color Profile adjustments/removal (Inspired by Flowlauncher Theme Named Tokyo Night Storm)
 - `sideberyConfig.css` Added to consolidate Sidebery cosmetic modifications/fixes
