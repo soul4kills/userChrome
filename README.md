@@ -3,6 +3,7 @@ Custom Firefox files with a focus on minimizing visual UI elements until it's ne
   
 Only works with Sidebery installed - Sidebery Extension Required  
 https://github.com/mbnuqw/sidebery 
+
 ## Features:
 - Autohide Main Toolbar
 - Autohide Sidebery
@@ -32,7 +33,7 @@ https://github.com/mbnuqw/sidebery
   sidebar.verticalTabs = false
   sidebar.revamp = false
 ```
-
+Confirmed to work with Firefox 132-136.0.2
 
 ## Default Functionality
 
