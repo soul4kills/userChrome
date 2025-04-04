@@ -24,7 +24,7 @@
 	}
 }
 	/* Enable full sidebar in Windowed Mode */
-@media (-moz-bool-pref: "uc.full.tabs") {
+@media -moz-pref("uc.full.tabs") {
 	#sidebar-box {
 		--uc-sidebar-width: var(--uc-sidebar-hover-width);
 	}
@@ -38,13 +38,13 @@
 		}
 	}
 	/* Toggle collapsed sidebar when maximized */
-	@media (-moz-bool-pref: "uc.collapse.tabs") {
+	@media -moz-pref("uc.collapse.tabs") {
 		#sidebar-box {
 			--uc-sidebar-width: 38px !important;
 		}
 	}
 	/* Toggle for Chromeless Experience */
-	@media not (-moz-bool-pref: "uc.chromeless") {
+	@media not -moz-pref("uc.chromeless") {
 		#sidebar-header,
 		#sidebar {
 			opacity: 95%;
@@ -108,7 +108,7 @@
 		display: none !important;
 	}
 	/* Toggle for chromeless */
-	@media (-moz-bool-pref: "uc.chromeless") {
+	@media -moz-pref("uc.chromeless") {
 		#sidebar-header,
 		#sidebar {
 			min-width: var(--uc-sidebar-hover-area) !important; /* Sidebar  Hover Area - Make Adjustments in userConfig.css */
@@ -127,6 +127,9 @@
 			}
 		}
 	}
+}
+#editBMPanel_folderTree {
+  min-height: 340px;
 }
 toolbarspring {
 	cursor: grab;
@@ -187,7 +190,7 @@ toolbarspring {
 		visibility: visible !important;
 	}
 }
-@media not (-moz-bool-pref: "sidebar.verticalTabs")	{
+@media not -moz-pref("sidebar.verticalTabs")	{
 	/* Shorter Tab Bar*/
 	:root {
 		--tab-max-height: 24px !important;
@@ -203,22 +206,34 @@ toolbarspring {
 	}
 }
 	/* Testing Native vertical tabs functionality */
-@media (-moz-bool-pref: "sidebar.verticalTabs")	{
-	/* Remove revamp sidebar buttons */
+
+	/* Testing Native vertical tabs functionality */
+
+	/* Testing Native vertical tabs functionality */
+
+	/* Testing Native vertical tabs functionality */
+@media -moz-pref("sidebar.verticalTabs")	{
+		/* Remove revamp sidebar buttons */
+	#sidebar-main {
+		background: var(--sidebar-background-color) !important;
+		position: absolute !important;
+		left: -235px !important;
+		z-index: 4 !important;
+		height: calc(100vh - 60px) !important; /* Adjust to your environment */
+		width: 246px !important;
+		transition: all 300ms ease-in-out 500ms !important;
+		opacity: 0% !important;
+	}
+
+	#sidebar-main:hover {
+		transition-delay: -20ms !important;
+		width: 246px !important;
+		left: 0 !important;
+		opacity: 90% !important;
+	}
 	.tools-and-extensions.actions-list,
-	.bottom-actions {
+	.bottom-actions,
+	#sidebar-launcher-splitter {
 		display: none !important;
 	}
-	box#sidebar-main {
-		position: relative !important;
-		transform: translateX(240px) !important;
-		opacity: 0% !important;
-		transition: all var(--uc-transition-global) !important;
-	}
-	box#sidebar-main:hover {
-		transition-delay: 0ms !important;
-		opacity: 95% !important;
-		transform: translateX(0px) !important;
-	}
-	stack.browserStack { margin-right: -250px !important; }
 }
