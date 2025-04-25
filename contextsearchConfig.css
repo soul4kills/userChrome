@@ -1,7 +1,7 @@
 /* Requires ContextSearch-web-ext */
 /* https://github.com/ssborbis/ContextSearch-web-ext */
 /* Preferred - Copy to ContextSearch-web-ext, General Settings > Custom CSS */
-/* 'OR' import contextsearchConfig.css in userConfig.css - Works but doesn't style input search box */
+/* 'OR' import contextsearchConfig.css in userContent.css - Works but doesn't style input search box */
 
 :root {
   --border: var(--tab-selected-outline-color) !important; /* userChrome.css Color */
