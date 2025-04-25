@@ -4,31 +4,32 @@ div.popup[style*="--fg"][style*="--bg"] {
 	visibility: collapse;
 		&:has(div[style*="background-image: url("][style*="opacity: 1;"]) {
 		visibility: visible !important;
-		border: 1px solid var(--tab-selected-outline-color);
+		border: 0px solid var(--tab-selected-outline-color);
 		border-radius: 50%;
-		box-shadow: 0 1px 20px -5px var(--tab-selected-outline-color)!important;
+		box-shadow: 0 0 0 1px var(--tab-selected-outline-color), 0 1px 20px -5px var(--tab-selected-outline-color)!important;
 	}
 	.header { visibility: collapse !important; }
-	@media not -moz-pref("sidebar.position_start") { left: auto !important;  right: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)) !important;}
-	@media -moz-pref("sidebar.position_start") { right: auto !important; left: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)) !important; }
+	@media not -moz-pref("sidebar.position_start") { left: auto !important;  right: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width) + 1) !important;}
+	@media -moz-pref("sidebar.position_start") { right: auto !important; left: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width) + 1) !important; }
 }
 	/* Tab preview fix alignment when uc.chromeless is toggled to true */
 @media -moz-pref("uc.chromeless") {
 	div.popup[style*="--fg"][style*="--bg"] {
-		@media not -moz-pref("sidebar.position_start") { left: auto !important; right: var(--uc-sidebar-hover-width) !important;}
-		@media -moz-pref("sidebar.position_start") { right: auto !important; left: var(--uc-sidebar-hover-width) !important;}
+		@media not -moz-pref("sidebar.position_start") { left: auto !important; right: calc(var(--uc-sidebar-hover-width) + 1)) !important;}
+		@media -moz-pref("sidebar.position_start") { right: auto !important; calc(var(--uc-sidebar-hover-width) + 1)) !important;}
 	}
 }
 	/* Fix pop-in-page tab preview alignment - Specifically when maximized or uc.full.tabs is true */
 @media (width: 1748px), -moz-pref("uc.full.tabs") { /* Adjustments  needed for user specific screen size */
 	div.popup[style*="--fg"][style*="--bg"]{
-		@media not -moz-pref("sidebar.position_start") { left: auto !important; right: 0px !important;}
-		@media -moz-pref("sidebar.position_start") { right: auto !important; left: 0px !important;}
+		@media not -moz-pref("sidebar.position_start") { left: auto !important; right: 1px !important;}
+		@media -moz-pref("sidebar.position_start") { right: auto !important; left: 1px !important;}
 	}
 }
 #sdbr_preview_root {
-	@media not -moz-pref("sidebar.position_start") { left: auto !important; right: 0px !important; }
-	@media -moz-pref("sidebar.position_start") { right: auto !important; left: 0px !important; }
+	opacity: .95 !important;
+	@media not -moz-pref("sidebar.position_start") { left: auto !important; right: 1px !important; }
+	@media -moz-pref("sidebar.position_start") { right: auto !important; left: 1px !important; }
 }
 /* End Tab Preview Crap */
 /* Collapses content on overflow */
@@ -37,7 +38,7 @@ div.popup[style*="--fg"][style*="--bg"] {
 	div#root.root.Sidebar {
 		--tabs-indent: unset !important;
 		--tabs-normal-fg: unset !important;
-	}	
+	}
 	div#root.root.Sidebar .audio { z-index: 100 !important; }
 	div#root.root.Sidebar .ScrollBox > .scroll-container { overflow: hidden !important;	}
 	div#root.root.Sidebar .Tab .title { visibility: collapse !important;}
@@ -93,7 +94,7 @@ div#root.root.Sidebar {
 --s-toolbar-fg: var(--lwt-toolbar-field-highlight) !important;
 --s-act-el-bg: var(--tab-selected-bgcolor)!important;
 --s-act-el-fg: var(--newtab-text-primary-color) !important;
---s-popup-bg: var(--arrowpanel-background) !important;
+--s-popup-bg: var(--toolbar-bgcolor) !important;
 --s-popup-fg: var( --lwt-text-color) !important;
 --s-popup-border: var(--tab-selected-outline-color) !important;
 --s-act-el-border: var(--tab-selected-outline-color) !important;

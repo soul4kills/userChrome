@@ -206,12 +206,6 @@ toolbarspring {
 	}
 }
 	/* Testing Native vertical tabs functionality */
-
-	/* Testing Native vertical tabs functionality */
-
-	/* Testing Native vertical tabs functionality */
-
-	/* Testing Native vertical tabs functionality */
 @media -moz-pref("sidebar.verticalTabs")	{
 		/* Remove revamp sidebar buttons */
 	#sidebar-main {
