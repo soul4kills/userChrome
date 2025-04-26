@@ -27,7 +27,7 @@ div.popup[style*="--fg"][style*="--bg"] {
 	}
 }
 #sdbr_preview_root {
-	opacity: .95 !important;
+	/* opacity: .95 !important;  disabled because it wouldn't hide itself */
 	@media not -moz-pref("sidebar.position_start") { left: auto !important; right: 1px !important; }
 	@media -moz-pref("sidebar.position_start") { right: auto !important; left: 1px !important; }
 }
