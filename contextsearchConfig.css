@@ -1,42 +1,38 @@
 /* Requires ContextSearch-web-ext */
 /* https://github.com/ssborbis/ContextSearch-web-ext */
 /* Preferred - Copy to ContextSearch-web-ext, General Settings > Custom CSS */
-/* 'OR' import contextsearchConfig.css in userConfig.css - Works but doesn't style input search box */
+/* 'OR' import contextsearchConfig.css in userContent.css - Works but doesn't style input search box */
 
 :root {
   --border: var(--tab-selected-outline-color) !important; /* userChrome.css Color */
   --background: var(--toolbar-bgcolor) !important; /* userChrome.css Color */
   --tools-color: var(--lwt-text-color) !important; /* userChrome.css Color */
   --folder-color: transparent !important;
-  --padding: 1px 0 1px 0 !important;
   --selected: rgba(255, 100, 244, 0.3) !important;
   --hover: var(--selected) !important;
   --separator: var(--selected) !important;
-  color: var(--border) !important;
-}
-
-.container {
-  padding: var(--padding);
+  --font: 10px !important;
+  color: var(--lwt-text-color) !important;
 }
 
 GROUP {
   --group-color: var(--arrowpanel-background) !important; /* userChrome.css Color */
-  padding: var(--padding);
-
+  padding: 0 !important;
   > LABEL {
       background-color: var(--group-color);
       text-transform: uppercase !important;
       font-family: "Arial", Helvetica, sans-serif !important;
       font-weight: bold;
-      font-size: 8pt;
+      font-size: var(--font) !important;
       color: var(--tools-color) !important;
-      padding: var(--padding) !important;
+      padding: 2px !important;
+      box-shadow: 0 1px 80px 30px var(--tab-selected-outline-color) !important;
   }
 }
 
 .tile {
   border: none !important;
-  margin: 0px 0px 1px 0px !important;
+  margin: 1px 0px 1px 0px !important;
 
   &:hover {
       border-radius: 4px !important;
@@ -44,51 +40,49 @@ GROUP {
   }
 
   &[data-type="separator"] {
-      margin: 0px 0px 0px 0px !important;
-      padding: 0px 0px 0px 0px !important;
+      margin: 0 !important;
+      padding: 0 !important;
       width: calc(100%) !important;
-      height: 0px !important;
+      height: 0 !important;
       border-bottom: 1px solid var(--border) !important;
 
       &:hover {
-          height: 0px !important;
-          border: 0px !important;
+          height: 0 !important;
+          border: 0 !important;
           border-bottom: 1px solid var(--border) !important;
       }
   }
 }
 
 #searchBar {
-  font-size: 8pt !important;
-  height: 25px !important;
-  text-align: left !important;
+  font-size: var(--font) !important;
+  height: 20px !important;
   border: none !important;
-  background-color: var(--toolbar-bgcolor) !important;
+  background-color: var(--background) !important;
   outline: none !important;
   color: var(--tools-color) !important;
 
   &:focus,
   &:focus-within {
       border: none !important;
-      background-color: var(--toolbar-bgcolor) !important;
+      background-color: var(--background) !important;
   }
 }
 
 #searchBarContainer > .tool {
-  font-size: 8pt !important;
-  padding: 0px !important;
+  font-size: var(--font) !important;
+  padding: 0 !important;
 }
 
 #suggestions {
   color: var(--tools-color) !important;
-  font-size: 8pt !important;
-  background-color: var(--arrowpanel-background) !important;
+  font-size: var(--font) !important;
+  background-color: var(--folder-color) !important;
   border: none !important;
-  text-align: left !important;
 
   > DIV {
-      padding: 0 0 4px 1px !important;
-      font-size: 8pt !important;
+      padding: 0 0 3px 2px !important;
+      font-size: var(--font) !important;
       height: 15px !important;
       display: flex !important;
       flex-direction: column !important;
@@ -102,7 +96,7 @@ GROUP {
 
 .selectedFocus,
 .selectedNoFocus {
-  border-radius: 3px !important;
+  border-radius: 4px !important;
   box-shadow: 0 0 0 1px var(--selected) !important;
   background-color: var(--selected) !important;
   color: var(--selected) !important;
@@ -122,6 +116,7 @@ GROUP {
   opacity: 0.1 !important;
 
   &:hover {
+      transition: all 300ms ease-in-out 0ms !important;
       opacity: 0.9 !important;
       box-shadow: 0 0 0 1px var(--tab-selected-outline-color), 0 1px 20px -5px var(--tab-selected-outline-color) !important; /* userContent.css Color */
   }
