@@ -1,25 +1,29 @@
 :root {
-  --tab-selected-outline-color: rgba(255, 100, 244, 0.52) !important;
-  --lwt-accent-color: rgb(30, 32, 48)!important;
-  --lwt-text-color: rgb(202, 211, 245) !important;
-  --arrowpanel-background: rgba(30, 32, 48, 0.851) !important;
+  --tab-selected-outline-color: rgb(255, 100, 244) !important; /**/
+  --in-content-primary-button-background-hover: rgba(255, 100, 244, 0.20) !important; /* Settings Content Button Background Color */
+  --lwt-text-color: rgb(192, 202, 245) !important;
+  --lwt-toolbar-field-highlight: rgb(186, 187, 241) !important;/**/
+  --toolbox-non-lwt-textcolor-inactive: rgb(125, 131, 156) !important;/**/
+  --toolbarbutton-active-background: rgb(115, 121, 148) !important;
+  --in-content-item-selected: rgba(56, 60, 77, 0.75) !important;
+  --tab-selected-bgcolor: rgb(48, 52, 70) !important;/**/
+  --toolbar-bgcolor: rgb(36, 40, 59) !important; /**/
+  --lwt-accent-color-inactive: rgb(35, 38, 52) !important;/**/
+  --arrowpanel-background: rgba(24, 25, 38, 0.85) !important;
+  --lwt-accent-color: rgb(24, 25, 38)!important;
+  --toolbar-field-background-color: rgba(24, 25, 38, 0.90) !important;/**/
   --arrowpanel-color: rgb(--lwt-text-color) !important;
   --arrowpanel-border-color: var(--tab-selected-outline-color) !important;
-  --toolbar-field-background-color: rgba(24, 25, 38, 0.8999999761581421) !important;
-  --toolbar-bgcolor: rgb(36, 39, 58) !important;
   --toolbar-color: var(--lwt-text-color) !important;
   --toolbar-field-color: var(--lwt-text-color) !important;
   --toolbar-field-border-color: var(--tab-selected-outline-color) !important;
   --toolbar-field-focus-background-color: var(--tab-selected-bgcolor) !important;
   --toolbar-field-focus-color: var(--lwt-text-color) !important;
   --toolbar-field-focus-border-color: var(--tab-selected-outline-color) !important;
-  --lwt-toolbar-field-highlight: rgb(186, 187, 241) !important;
   --lwt-toolbar-field-highlight-text: var(--tab-selected-bgcolor) !important;
   --newtab-background-color: var(--toolbar-field-background-color) !important;
   --newtab-text-primary-color: var(--lwt-text-color) !important;
-  --lwt-accent-color-inactive: rgb(35, 38, 52) !important;
   --tab-loading-fill: var(--lwt-toolbar-field-highlight) !important;
-  --tab-selected-bgcolor: rgb(48, 52, 70) !important;
   --tab-selected-textcolor: var(--newtab-text-primary-color) !important;
   --lwt-tab-line-color: var(--tab-selected-outline-color) !important;
   --lwt-background-tab-separator-color: var(--lwt-toolbar-field-highlight) !important;
@@ -27,7 +31,6 @@
   --chrome-content-separator-color: var(--tab-selected-bgcolor) !important;
   --toolbarbutton-icon-fill: var(--lwt-toolbar-field-highlight) !important;
   --lwt-toolbarbutton-icon-fill-attention: var(--lwt-toolbar-field-highlight) !important;
-  --toolbarbutton-active-background: rgb(115, 121, 148) !important;
   --urlbarView-highlight-background: var(--toolbarbutton-active-background) !important;
   --urlbarView-highlight-color: var(--newtab-text-primary-color) !important;
   --sidebar-background-color: var(--tab-selected-bgcolor) !important;
@@ -35,9 +38,7 @@
   --sidebar-border-color: var(--tab-selected-bgcolor) !important;
   --tabpanel-background-color: var(--toolbar-field-background-color) !important;
   --toolbox-non-lwt-textcolor: var(--lwt-toolbar-field-highlight) !important;
-  --toolbox-non-lwt-textcolor-inactive: rgb(125, 131, 156) !important;
   --in-content-primary-button-text-color: var(--lwt-toolbar-field-highlight) !important;
-  --in-content-item-selected: rgba(56, 60, 77, 0.76) !important;
   --panel-separator-color: var(--tab-selected-outline-color) !important;
   /* Questionable Coloring Targets */
   --color-accent-primary: var(--tab-selected-outline-color) !important;
@@ -47,8 +48,7 @@
   --button-background-color-secondary-hover: var(--tab-selected-outline-color) !important; /* GUI Input, Buttons, Accent Color */
   --text-color-disabled: var(--toolbarbutton-active-background) !important; /* Content Menu Text Disabled Color */
   --in-content-page-color: var(--lwt-text-color) !important; /* Settings Content Text Color */
-  --in-content-primary-button-background:var(--tab-selected-outline-color)  !important;
-  --in-content-primary-button-background-hover: rgba(255, 100, 244, 0.20) !important; /* Settings Content Button Background Color */
+  --in-content-primary-button-background: var(--tab-selected-outline-color)  !important;
   --in-content-page-background: var(--arrowpanel-background) !important; /* Settings Content Background Color */
   /* --in-content-primary-button-background-active: !important; /* Settings Content Button Background Color */
   --in-content-box-info-background: var(--in-content-item-selected) !important; /* Settings Content Box Background Color */
@@ -68,9 +68,9 @@
   color: var(--toolbar-color) !important;
 }
 menupopup, menu,  panel {
-  --panel-background: rgba(36, 39, 58, 0.85) !important;
+  --panel-background: var(--arrowpanel-background) !important;
   --panel-border-color: var(--toolbar-field-border-color) !important;
-  --panel-shadow: 0 1px 20px -10px rgba(255, 100, 244, 0.20) !important;
+  --panel-shadow: 0 1px 20px -10px var(--in-content-primary-button-background-hover) !important;
   --panel-color: var(--lwt-text-color) !important; /* Page Menu Text Color */
   --panel-shadow-margin: 50px !important;
 /* --panel-item-hover-bgcolor: red !important; */
@@ -81,7 +81,7 @@ menubar > menu[_moz-menuactive="true"],
 menupopup > menu[_moz-menuactive="true"],
 popup > menu[_moz-menuactive="true"],
 menuitem[_moz-menuactive="true"] {
-  background-color: rgba(56, 60, 77, 0.76) !important;
+  background-color: var(--in-content-item-selected) !important;
 }
 /*
 #contentAreaContextMenu {
