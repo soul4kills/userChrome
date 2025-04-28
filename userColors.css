@@ -1,18 +1,18 @@
 :root {
   --tab-selected-outline-color: rgb(255, 100, 244) !important; /**/
-  --in-content-primary-button-background-hover: rgba(255, 100, 244, 0.20) !important; /* Settings Content Button Background Color */
+  --in-content-item-selected: rgba(255, 100, 244, 0.20) !important;
   --lwt-text-color: rgb(192, 202, 245) !important;
   --lwt-toolbar-field-highlight: rgb(186, 187, 241) !important;/**/
   --toolbox-non-lwt-textcolor-inactive: rgb(125, 131, 156) !important;/**/
   --toolbarbutton-active-background: rgb(115, 121, 148) !important;
-  --in-content-item-selected: rgba(56, 60, 77, 0.75) !important;
+  --background-color-box: rgba(56, 60, 77, 0.75) !important;
   --tab-selected-bgcolor: rgb(48, 52, 70) !important;/**/
   --toolbar-bgcolor: rgb(36, 40, 59) !important; /**/
   --lwt-accent-color-inactive: rgb(35, 38, 52) !important;/**/
-  --arrowpanel-background: rgba(24, 25, 38, 0.85) !important;
   --lwt-accent-color: rgb(24, 25, 38)!important;
   --toolbar-field-background-color: rgba(24, 25, 38, 0.90) !important;/**/
-  --arrowpanel-color: rgb(--lwt-text-color) !important;
+  --arrowpanel-background: rgba(24, 25, 38, 0.90) !important;
+  --arrowpanel-color: var(--lwt-text-color) !important;
   --arrowpanel-border-color: var(--tab-selected-outline-color) !important;
   --toolbar-color: var(--lwt-text-color) !important;
   --toolbar-field-color: var(--lwt-text-color) !important;
@@ -27,32 +27,37 @@
   --tab-selected-textcolor: var(--newtab-text-primary-color) !important;
   --lwt-tab-line-color: var(--tab-selected-outline-color) !important;
   --lwt-background-tab-separator-color: var(--lwt-toolbar-field-highlight) !important;
-  --toolbarseparator-color: var(--lwt-toolbar-field-highlight) !important;
   --chrome-content-separator-color: var(--tab-selected-bgcolor) !important;
   --toolbarbutton-icon-fill: var(--lwt-toolbar-field-highlight) !important;
   --lwt-toolbarbutton-icon-fill-attention: var(--lwt-toolbar-field-highlight) !important;
-  --urlbarView-highlight-background: var(--toolbarbutton-active-background) !important;
   --urlbarView-highlight-color: var(--newtab-text-primary-color) !important;
+  --urlbarView-highlight-background: var(--toolbarbutton-active-background) !important;
   --sidebar-background-color: var(--tab-selected-bgcolor) !important;
   --sidebar-text-color: var(--newtab-text-primary-color) !important;
   --sidebar-border-color: var(--tab-selected-bgcolor) !important;
   --tabpanel-background-color: var(--toolbar-field-background-color) !important;
   --toolbox-non-lwt-textcolor: var(--lwt-toolbar-field-highlight) !important;
-  --in-content-primary-button-text-color: var(--lwt-toolbar-field-highlight) !important;
   --panel-separator-color: var(--tab-selected-outline-color) !important;
+  --toolbarseparator-color: var(--lwt-toolbar-field-highlight) !important;
   /* Questionable Coloring Targets */
   --color-accent-primary: var(--tab-selected-outline-color) !important;
-  --color-accent-secondary: var(--tab-selected-outline-color) !important;
-  --color-accent-tertiary: var(--tab-selected-outline-color) !important;
-  --button-background-color-primary-hover: var(--tab-selected-outline-color) !important; /* GUI Input, Buttons, Accent Color */
-  --button-background-color-secondary-hover: var(--tab-selected-outline-color) !important; /* GUI Input, Buttons, Accent Color */
+  --button-background-color-primary-hover: var(--in-content-item-selected) !important; /* GUI Input Hover, Buttons, Accent Color */
   --text-color-disabled: var(--toolbarbutton-active-background) !important; /* Content Menu Text Disabled Color */
+  --menu-hoverbackground: var(--in-content-item-selected) !important; /* Menu Hover Background Color */
+  --button-text-color-ghost: var(--lwt-text-color) !important; /* GUI Menu Text Color -------*/
+  --button-text-color-ghost-hover: var(--lwt-text-color) !important; /* GUI Menu Hover Selection Text Color */
+  --button-background-color-ghost-hover: var(--in-content-item-selected) !important; /* GUI Menu Hover Selection Background Color */
+  /* Firefox Settings UI Elements */
   --in-content-page-color: var(--lwt-text-color) !important; /* Settings Content Text Color */
-  --in-content-primary-button-background: var(--tab-selected-outline-color)  !important;
   --in-content-page-background: var(--arrowpanel-background) !important; /* Settings Content Background Color */
-  /* --in-content-primary-button-background-active: !important; /* Settings Content Button Background Color */
-  --in-content-box-info-background: var(--in-content-item-selected) !important; /* Settings Content Box Background Color */
-  --background-color-box: var(--in-content-item-selected) !important;
+  --in-content-box-info-background: var(--background-color-box) !important; /* Settings Content Box Background Color */
+  --in-content-button-text-color-hover: var(--tab-selected-outline-color) !important;
+/*--in-content-button-background-hover: var(--tab-selected-outline-color) !important; /* Settings Content Button Background Color */
+  --in-content-primary-button-text-color: var(--lwt-text-color) !important;
+  --in-content-primary-button-text-color-hover: var(--lwt-accent-color) !important;
+  --in-content-primary-button-background: var(--in-content-item-selected)  !important;
+  --in-content-primary-button-background-hover: var(--tab-selected-outline-color) !important; /* Settings Content Button Background Color */
+  --link-color-hover: rgb(42, 195, 222) !important; /* Settings Content Link Hover Color */
 }
 #navigator-toolbox {
   background-color: var(--lwt-accent-color) !important;
@@ -70,11 +75,10 @@
 menupopup, menu,  panel {
   --panel-background: var(--arrowpanel-background) !important;
   --panel-border-color: var(--toolbar-field-border-color) !important;
-  --panel-shadow: 0 1px 20px -10px var(--in-content-primary-button-background-hover) !important;
+  --panel-shadow: 0 1px 25px -10px var(--in-content-item-selected) !important;  /* Page Menu Shadow Color */
   --panel-color: var(--lwt-text-color) !important; /* Page Menu Text Color */
-  --panel-shadow-margin: 50px !important;
+  --panel-shadow-margin: 25px !important;
 /* --panel-item-hover-bgcolor: red !important; */
-/* --panel-shadow: 0 1px 12px 0 var(--tab-selected-outline-color) !important; /* Page Menu Shadow Color */
 }
 /* This changes the color when hovering over items of some right click context menus */
 menubar > menu[_moz-menuactive="true"],

@@ -5,7 +5,7 @@ div.popup[style*="--fg"][style*="--bg"] {
 		&:has(div[style*="background-image: url("][style*="opacity: 1;"]) {
 		visibility: visible !important;
 		border: none !important;
-		border-radius: 50%;
+		border-radius: 4px !important;
 		box-shadow: 0 0 0 1px var(--tab-selected-outline-color), 0 1px 20px -5px var(--tab-selected-outline-color) !important;
 	}
 	.header { visibility: collapse !important; }

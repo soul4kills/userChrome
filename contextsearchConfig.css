@@ -32,7 +32,7 @@ GROUP {
 }
 
 .tile {
-  margin: 2px 2px 2px 2px !important;
+  margin: 2px !important;
   border: none !important;
 
   &:hover {
@@ -45,6 +45,7 @@ GROUP {
       height: 0 !important;
       width: 100% !important;
       border-bottom: 1px solid var(--border) !important;
+      box-shadow: none !important;
   }
 }
 
@@ -111,7 +112,7 @@ GROUP {
   opacity: .3 !important;
   border: none !important;
   border-radius: 4px !important;
-  box-shadow: 0 0 0 1px var(--tab-selected-outline-color), 0 1px 20px -5px var(--tab-selected-outline-color) !important; /* userContent.css Color */
+  box-shadow: 0 0 0 1px var(--tab-selected-outline-color) !important; /* userContent.css Color */
 
   &:hover {
       /* transition: all 300ms ease-in-out 0ms !important; */
