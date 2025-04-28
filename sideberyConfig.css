@@ -9,21 +9,21 @@ div.popup[style*="--fg"][style*="--bg"] {
 		box-shadow: 0 0 0 1px var(--tab-selected-outline-color), 0 1px 20px -5px var(--tab-selected-outline-color) !important;
 	}
 	.header { visibility: collapse !important; }
-	@media not -moz-pref("sidebar.position_start") { left: auto !important;  right: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width) + 1px) !important;}
-	@media -moz-pref("sidebar.position_start") { right: auto !important; left: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width) + 1px) !important; }
+	@media not -moz-pref("sidebar.position_start") { left: auto !important;  right: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)) !important;}
+	@media -moz-pref("sidebar.position_start") { right: auto !important; left: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)) !important; }
 }
 	/* Tab preview fix alignment when uc.chromeless is toggled to true */
 @media -moz-pref("uc.chromeless") {
 	div.popup[style*="--fg"][style*="--bg"] {
-		@media not -moz-pref("sidebar.position_start") { left: auto !important; right: calc(var(--uc-sidebar-hover-width) + 1px) !important;}
-		@media -moz-pref("sidebar.position_start") { right: auto !important; left: calc(var(--uc-sidebar-hover-width) + 1px) !important;}
+		@media not -moz-pref("sidebar.position_start") { left: auto !important; right: var(--uc-sidebar-hover-width) !important;}
+		@media -moz-pref("sidebar.position_start") { right: auto !important; left: var(--uc-sidebar-hover-width) !important;}
 	}
 }
 	/* Fix pop-in-page tab preview alignment - Specifically when maximized or uc.full.tabs is true */
-@media (width: 1748px), -moz-pref("uc.full.tabs") { /* Adjustments  needed for user specific screen size */
+@media -moz-pref("uc.full.tabs"), (width: 1728px) { /* Adjustments needed for user viewport size when MAXIMIZED */
 	div.popup[style*="--fg"][style*="--bg"]{
-		@media not -moz-pref("sidebar.position_start") { left: auto !important; right: 1px !important;}
-		@media -moz-pref("sidebar.position_start") { right: auto !important; left: 1px !important;}
+		@media not -moz-pref("sidebar.position_start") { left: auto !important; right: 0px !important;}
+		@media -moz-pref("sidebar.position_start") { right: auto !important; left: 0px !important;}
 	}
 }
 #sdbr_preview_root {
