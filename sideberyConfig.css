@@ -9,14 +9,14 @@ div.popup[style*="--fg"][style*="--bg"] {
 		box-shadow: 0 0 0 1px var(--tab-selected-outline-color), 0 1px 20px -5px var(--tab-selected-outline-color) !important;
 	}
 	.header { visibility: collapse !important; }
-	@media not -moz-pref("sidebar.position_start") { left: auto !important;  right: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width) + 1) !important;}
-	@media -moz-pref("sidebar.position_start") { right: auto !important; left: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width) + 1) !important; }
+	@media not -moz-pref("sidebar.position_start") { left: auto !important;  right: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width) + 1px) !important;}
+	@media -moz-pref("sidebar.position_start") { right: auto !important; left: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width) + 1px) !important; }
 }
 	/* Tab preview fix alignment when uc.chromeless is toggled to true */
 @media -moz-pref("uc.chromeless") {
 	div.popup[style*="--fg"][style*="--bg"] {
-		@media not -moz-pref("sidebar.position_start") { left: auto !important; right: calc(var(--uc-sidebar-hover-width) + 1)) !important;}
-		@media -moz-pref("sidebar.position_start") { right: auto !important; calc(var(--uc-sidebar-hover-width) + 1)) !important;}
+		@media not -moz-pref("sidebar.position_start") { left: auto !important; right: calc(var(--uc-sidebar-hover-width) + 1px) !important;}
+		@media -moz-pref("sidebar.position_start") { right: auto !important; left: calc(var(--uc-sidebar-hover-width) + 1px) !important;}
 	}
 }
 	/* Fix pop-in-page tab preview alignment - Specifically when maximized or uc.full.tabs is true */

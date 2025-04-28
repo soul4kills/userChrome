@@ -1,6 +1,6 @@
 :root {
   --tab-selected-outline-color: rgb(255, 100, 244) !important; /**/
-  --in-content-item-selected: rgba(255, 100, 244, 0.20) !important;
+  --in-content-item-selected: rgba(255, 100, 244, 0.35) !important;
   --lwt-text-color: rgb(192, 202, 245) !important;
   --lwt-toolbar-field-highlight: rgb(186, 187, 241) !important;/**/
   --toolbox-non-lwt-textcolor-inactive: rgb(125, 131, 156) !important;/**/
@@ -12,6 +12,7 @@
   --lwt-accent-color: rgb(24, 25, 38)!important;
   --toolbar-field-background-color: rgba(24, 25, 38, 0.90) !important;/**/
   --arrowpanel-background: rgba(24, 25, 38, 0.90) !important;
+  --link-color-hover: rgb(42, 195, 222) !important; /* Settings Content Link Hover Color */
   --arrowpanel-color: var(--lwt-text-color) !important;
   --arrowpanel-border-color: var(--tab-selected-outline-color) !important;
   --toolbar-color: var(--lwt-text-color) !important;
@@ -57,7 +58,6 @@
   --in-content-primary-button-text-color-hover: var(--lwt-accent-color) !important;
   --in-content-primary-button-background: var(--in-content-item-selected)  !important;
   --in-content-primary-button-background-hover: var(--tab-selected-outline-color) !important; /* Settings Content Button Background Color */
-  --link-color-hover: rgb(42, 195, 222) !important; /* Settings Content Link Hover Color */
 }
 #navigator-toolbox {
   background-color: var(--lwt-accent-color) !important;
