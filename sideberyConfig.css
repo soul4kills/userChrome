@@ -2,13 +2,13 @@
 	/* Pop-in-page tab preview fix/cosmetic changes */
 div.popup[style*="--fg"][style*="--bg"] {
 	visibility: collapse;
-		&:has(div[style*="background-image: url("][style*="opacity: 1;"]) {
+	.header { visibility: collapse !important; }
+	&:has(div[style*="background-image: url("][style*="opacity: 1;"]) {
 		visibility: visible !important;
 		border: none !important;
 		border-radius: 4px !important;
 		box-shadow: 0 0 0 1px var(--tab-selected-outline-color), 0 1px 20px -5px var(--tab-selected-outline-color) !important;
 	}
-	.header { visibility: collapse !important; }
 	@media not -moz-pref("sidebar.position_start") { left: auto !important;  right: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)) !important;}
 	@media -moz-pref("sidebar.position_start") { right: auto !important; left: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)) !important; }
 }
@@ -21,7 +21,7 @@ div.popup[style*="--fg"][style*="--bg"] {
 }
 	/* Fix pop-in-page tab preview alignment - Specifically when maximized or uc.full.tabs is true */
 @media -moz-pref("uc.full.tabs"), (width: 1728px) { /* Adjustments needed for user viewport size when MAXIMIZED */
-	div.popup[style*="--fg"][style*="--bg"]{
+	div.popup[style*="--fg"][style*="--bg"] {
 		@media not -moz-pref("sidebar.position_start") { left: auto !important; right: 0px !important;}
 		@media -moz-pref("sidebar.position_start") { right: auto !important; left: 0px !important;}
 	}
@@ -38,15 +38,17 @@ div.popup[style*="--fg"][style*="--bg"] {
 	div#root.root.Sidebar {
 		--tabs-indent: unset !important;
 		--tabs-normal-fg: unset !important;
-	}
-	div#root.root.Sidebar .audio { z-index: 100 !important; }
-	div#root.root.Sidebar .ScrollBox > .scroll-container { overflow: hidden !important;	}
-	div#root.root.Sidebar .Tab .title { visibility: collapse !important;}
-	div#root.root.Sidebar .Tab .audio {
-		left: 10px  !important;
-		transform: scale(.80) !important;
-		transform: translateY(4px)  !important;
-		fill: var(--tabs-activated-fg);
+		.audio { z-index: 100 !important; }
+		.ScrollBox > .scroll-container { overflow: hidden !important;	}
+		.Tab {
+			.title { visibility: collapse !important;}
+			.audio {
+				left: 10px  !important;
+				transform: scale(.80) !important;
+				transform: translateY(4px)  !important;
+				fill: var(--tabs-activated-fg);
+			}
+		}
 	}
 }
 @media screen and (min-width: 50px) { /* Activates When not Collapsed */
@@ -68,7 +70,6 @@ div#root.root.Sidebar {
 		box-shadow: 0 -1px 0 0 var(--tab-selected-outline-color),0 -1px 80px 10px var(--tab-selected-outline-color) !important;
 		@media -moz-pref("uc.shadow.flicker") { transition: all 2000ms cubic-bezier(0.2, -2, 0.8, 6) 0ms !important; }
 	}
-	.scroll-container { padding: 1px 0 0 0 !important; }
 	.PinnedTabsBar { /* nowrap for Pinned Icons */
 		overflow-x: scroll !important;
 		overflow: scroll !important;
@@ -76,27 +77,28 @@ div#root.root.Sidebar {
 		padding: 6px 3px 6px 3px !important;
 		scrollbar-width: 1px !important;
 	}
-	.Tab[data-active="true"] .body { box-shadow: 0 0 0 1px var(--tab-selected-outline-color),0 1px 20px -5px var(--tab-selected-outline-color) !important; }
+	.scroll-container { padding: 1px 0 0 0 !important; }
 	.top-horizontal-box { margin-bottom: 0px !important; }
 	.NavigationBar .nav-item .audio { background-color: unset !important;}
+	.Tab[data-active="true"] .body { box-shadow: 0 0 0 1px var(--tab-selected-outline-color),0 1px 20px -5px var(--tab-selected-outline-color) !important; }
 }
 	/* Sidebery Colors */
 #sdbr_preview_root {
---hbg: var(--toolbar-bgcolor) !important;
---hfg: var(--lwt-toolbar-field-highlight) !important;
---bg: var(--toolbar-bgcolor) !important;
---fg: var(--lwt-toolbar-field-highlight) !important;
+	--hbg: var(--toolbar-bgcolor) !important;
+	--hfg: var(--lwt-toolbar-field-highlight) !important;
+	--bg: var(--toolbar-bgcolor) !important;
+	--fg: var(--lwt-toolbar-field-highlight) !important;
 }
 div#root.root.Sidebar {
---s-frame-bg: var(--lwt-accent-color) !important;
---s-frame-fg: var(--lwt-text-color) !important;
---s-toolbar-bg: var(--toolbar-bgcolor) !important;
---s-toolbar-fg: var(--lwt-toolbar-field-highlight) !important;
---s-act-el-bg: var(--tab-selected-bgcolor)!important;
---s-act-el-fg: var(--newtab-text-primary-color) !important;
---s-popup-bg: var(--arrowpanel-background) !important;
---s-popup-fg: var( --lwt-text-color) !important;
---s-popup-border: var(--tab-selected-outline-color) !important;
---s-act-el-border: var(--tab-selected-outline-color) !important;
---s-accent: var(--tab-selected-outline-color) !important;
+	--s-frame-bg: var(--lwt-accent-color) !important;
+	--s-frame-fg: var(--lwt-text-color) !important;
+	--s-toolbar-bg: var(--toolbar-bgcolor) !important;
+	--s-toolbar-fg: var(--lwt-toolbar-field-highlight) !important;
+	--s-act-el-bg: var(--tab-selected-bgcolor)!important;
+	--s-act-el-fg: var(--newtab-text-primary-color) !important;
+	--s-popup-bg: var(--arrowpanel-background) !important;
+	--s-popup-fg: var( --lwt-text-color) !important;
+	--s-popup-border: var(--tab-selected-outline-color) !important;
+	--s-act-el-border: var(--tab-selected-outline-color) !important;
+	--s-accent: var(--tab-selected-outline-color) !important;
 }

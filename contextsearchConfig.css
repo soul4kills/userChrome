@@ -10,9 +10,10 @@
   --background: var(--lwt-accent-color) !important; /* userChrome.css Color */
   --tools-color: var(--lwt-text-color) !important; /* userChrome.css Color */
   --tb-bgcolor: var(--toolbar-bgcolor) !important; /* userChrome.css Color */
-  --selected: var(--in-content-primary-button-background-hover) !important; /* userChrome.css Color */
+  --selected: var(--in-content-item-selected) !important; /* userChrome.css Color */
   --separator: var(--selected) !important;
   --hover: var(--selected) !important;
+  --folder-label-color-singlecolumn: var(--lwt-text-color) !important;
   color: var(--tools-color) !important;
 }
 
@@ -32,7 +33,7 @@ GROUP {
 }
 
 .tile {
-  margin: 2px !important;
+  margin: 1px 0 2px 0 !important;
   border: none !important;
 
   &:hover {
@@ -46,6 +47,11 @@ GROUP {
       width: 100% !important;
       border-bottom: 1px solid var(--border) !important;
       box-shadow: none !important;
+  }
+  /* Filters history.svg black icon to match color scheme, in this case for #c0caf5 */
+  /* https://codepen.io/sosuke/pen/Pjoqqp - use this to find your filter color*/
+  &[style*="history.svg"] {
+    filter: invert(98%) sepia(28%) saturate(4501%) hue-rotate(175deg) brightness(100%) contrast(92%) !important;
   }
 }
 
@@ -109,7 +115,7 @@ GROUP {
 /* Will not resolve userChrome.css variable assignments, ONLY from userContent.css */
 #CS_quickMenuIframe,
 .CS_quickMenuIframe {
-  opacity: .3 !important;
+  opacity: .2 !important;
   border: none !important;
   border-radius: 4px !important;
   box-shadow: 0 0 0 1px var(--tab-selected-outline-color) !important; /* userContent.css Color */
@@ -117,6 +123,6 @@ GROUP {
   &:hover {
       /* transition: all 300ms ease-in-out 0ms !important; */
       opacity: .9 !important;
-      box-shadow: 0 0 0 1px var(--tab-selected-outline-color), 0 1px 20px -5px var(--tab-selected-outline-color) !important; /* userContent.css Color */
+      box-shadow: 0 0 0 1px var(--tab-selected-outline-color), 0 0 20px -5px var(--tab-selected-outline-color) !important; /* userContent.css Color */
   }
 }
