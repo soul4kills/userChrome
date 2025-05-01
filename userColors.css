@@ -72,20 +72,30 @@
 .titlebar-button {
   color: var(--toolbar-color) !important;
 }
-menupopup, menu,  panel {
-  --panel-background: var(--arrowpanel-background) !important;
-  --panel-border-color: var(--toolbar-field-border-color) !important;
-  --panel-shadow: 0 1px 25px -10px var(--in-content-item-selected) !important;  /* Page Menu Shadow Color */
+menupopup {
   --panel-color: var(--lwt-text-color) !important; /* Page Menu Text Color */
-  --panel-shadow-margin: 25px !important;
+  --panel-border-color: var(--tab-selected-outline-color) !important;
+  --panel-background: var(--arrowpanel-background) !important;
+  --panel-shadow-margin: 0px !important;
 /* --panel-item-hover-bgcolor: red !important; */
+ }
+.menupopup-arrowscrollbox {
+  padding: 0px !important;
+  margin: 0px !important;
+  border-width: 2px !important;
+  border-radius: 8px !important; /* Page Menu Shadow Color */
 }
+/* Broken after 138 update
+panel {
+  --panel-shadow-margin: 25px !important;
+  --panel-shadow: 0 1px 25px -10px var(--in-content-item-selected) !important;
+}
+*/
 /* This changes the color when hovering over items of some right click context menus */
 menubar > menu[_moz-menuactive="true"],
 menupopup > menu[_moz-menuactive="true"],
 popup > menu[_moz-menuactive="true"],
 menuitem[_moz-menuactive="true"] {
-  background-color: var(--in-content-item-selected) !important;
 }
 /*
 #contentAreaContextMenu {
