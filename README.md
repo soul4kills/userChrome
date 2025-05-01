@@ -1,11 +1,11 @@
 # Firefox userChrome
-Custom Firefox files with a focus on minimizing visual UI elements until it's needed. Autohide Everything!  
-  
-Only works with Sidebery installed - Sidebery Extension Required  
-https://github.com/mbnuqw/sidebery 
+Custom Firefox files with a focus on minimizing visual UI elements until it's needed. Autohide Everything!
 
-Compatible with Firefox 137 as of 2025/04/03  
-Not Compatible with Firefox 136.0.2 and below  
+Only works with Sidebery installed - Sidebery Extension Required
+https://github.com/mbnuqw/sidebery
+
+Compatible with Firefox 138 as of 2025/05/01
+Not Compatible with Firefox 136.0.2 and below
 
 ## Features:
 - Autohide Main Toolbar
@@ -15,7 +15,7 @@ Not Compatible with Firefox 136.0.2 and below
 - `userConfig.css` Consolidated adjustments of Personal Preferences here for conevenience
 - `userColors.css` Added for convenient Color Profile adjustments/removal (Inspired by Flowlauncher Theme Named Tokyo Night Storm)
 - `sideberyConfig.css` Added to consolidate Sidebery cosmetic modifications/fixes
-- `uc.shadow.flicker` Added Cool aesthetic indicator for overflowing tabs in Sidebery. Flickers like a real fluorescent light. Off by default. It's a resource hog to animate.    
+- `uc.shadow.flicker` Added Cool aesthetic indicator for overflowing tabs in Sidebery. Flickers like a real fluorescent light. Off by default. It's a resource hog to animate.
 #### `about:config` toggles to add
 ```
   //Toggle for Chromeless Experience
@@ -35,6 +35,11 @@ Not Compatible with Firefox 136.0.2 and below
   toolkit.legacyUserProfileCustomizations.stylesheets = true
   sidebar.verticalTabs = false
   sidebar.revamp = false
+  widget.windows.mica =
+
+  // as of version 138, it's default is '2', turning on mica for content popup menu
+  widget.windows.mica.popups = 0
+
 ```
 
 ## Default Functionality
