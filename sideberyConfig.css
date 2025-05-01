@@ -71,7 +71,6 @@ div#root.root.Sidebar {
 		@media -moz-pref("uc.shadow.flicker") { transition: all 2000ms cubic-bezier(0.2, -2, 0.8, 6) 0ms !important; }
 	}
 	.PinnedTabsBar { /* nowrap for Pinned Icons */
-		overflow-x: scroll !important;
 		overflow: scroll !important;
 		flex-wrap: nowrap!important;
 		padding: 6px 3px 6px 3px !important;

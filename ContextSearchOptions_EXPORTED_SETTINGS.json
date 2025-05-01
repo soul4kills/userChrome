@@ -1,0 +1,712 @@
+{
+	"addSearchProviderHideNotification": false,
+	"advancedImport": false,
+	"allowDeleteEnginesFromTileMenu": true,
+	"allowHotkeysOnImages": false,
+	"allowHotkeysOnLinks": false,
+	"allowHotkeysWithoutMenu": false,
+	"alwaysAllowTileRearranging": false,
+	"askToAddNewEngineToFirefox": false,
+	"autoCopy": false,
+	"autoCopyOnInputs": false,
+	"autoImportFirefoxEngines": false,
+	"autoPasteFromClipboard": false,
+	"autoTheme": false,
+	"autoThemeDark": "dark",
+	"autoThemeLite": "dark",
+	"blockList": [
+		"moz-extension://*",
+		"chrome://*"
+	],
+	"cacheIcons": true,
+	"cacheIconsMaxSize": 125,
+	"checkContextMenuEventOrder": false,
+	"contextMenu": false,
+	"contextMenuBookmarks": false,
+	"contextMenuClick": "openNewTab",
+	"contextMenuContextualLayoutFlattenLimit": 0,
+	"contextMenuCtrl": "openBackgroundTab",
+	"contextMenuHotkeys": false,
+	"contextMenuKey": 90,
+	"contextMenuMiddleClick": "openBackgroundTab",
+	"contextMenuOnAudios": true,
+	"contextMenuOnImages": true,
+	"contextMenuOnLinks": true,
+	"contextMenuOnVideos": true,
+	"contextMenuRegexMatchedEngines": false,
+	"contextMenuRightClick": "openCurrentTab",
+	"contextMenuSearchLinksAs": "url",
+	"contextMenuShift": "openNewWindow",
+	"contextMenuShowAddCustomSearch": true,
+	"contextMenuShowFolderSearch": false,
+	"contextMenuShowRecentlyUsed": true,
+	"contextMenuShowRecentlyUsedAsFolder": true,
+	"contextMenuShowRecentlyUsedIcon": true,
+	"contextMenuShowSettingsFolder": false,
+	"contextMenuTitle": "",
+	"contextMenuUseContextualLayout": true,
+	"contextMenuUseInnerText": false,
+	"copyUseDepreciatedExecCommand": false,
+	"customSearchActions": [
+		{
+			"event": "dblclick",
+			"button": 0,
+			"altKey": false,
+			"ctrlKey": false,
+			"metaKey": false,
+			"shiftKey": false,
+			"action": "openBackgroundTab",
+			"folder": false
+		},
+		{
+			"event": "dblclick",
+			"button": 1,
+			"altKey": false,
+			"ctrlKey": false,
+			"metaKey": false,
+			"shiftKey": false,
+			"action": "openNewWindow",
+			"folder": false
+		},
+		{
+			"event": "dblclick",
+			"button": 2,
+			"altKey": false,
+			"ctrlKey": false,
+			"metaKey": false,
+			"shiftKey": false,
+			"action": "openNewIncognitoWindow",
+			"folder": false
+		}
+	],
+	"defaultGroupColor": "#CED7FF",
+	"defaultGroupColorText": "#444444",
+	"developerMode": false,
+	"disableNewTabSorting": true,
+	"dockingMoveFixedElements": false,
+	"enableAnimations": false,
+	"enableAnimationsTileSlider": false,
+	"exportWithoutBase64Icons": false,
+	"forceOpenResultsTabsAdjacent": true,
+	"groupFolderRowBreaks": false,
+	"groupLabelMoreTile": false,
+	"hiddenEngines": "",
+	"highLight": {
+		"activeStyle": {
+			"background": "#65ff00",
+			"color": "#ffffff"
+		},
+		"enabled": true,
+		"findBar": {
+			"keyboardTimeout": 500,
+			"markOptions": {
+				"accuracy": "exactly",
+				"caseSensitive": false,
+				"ignorePunctuation": true,
+				"separateWordSearch": false,
+				"limit": 0
+			},
+			"offsets": {
+				"bottom": 9007199254740991,
+				"left": 0,
+				"right": 9007199254740991,
+				"top": 0
+			},
+			"openInAllTabs": false,
+			"position": "top",
+			"scale": 1,
+			"searchInAllTabs": false,
+			"showNavBar": false,
+			"startOpen": false,
+			"windowType": "docked",
+			"highlightAllTab": false
+		},
+		"flashSelected": false,
+		"followDomain": true,
+		"followExternalLinks": true,
+		"highlightStyle": "underline",
+		"markOptions": {
+			"accuracy": "exactly",
+			"caseSensitive": false,
+			"ignorePunctuation": true,
+			"limit": 0,
+			"separateWordSearch": true,
+			"timeout": 5000
+		},
+		"navBar": {
+			"enabled": false
+		},
+		"opacity": 1,
+		"showFindBar": false,
+		"styles": [
+			{
+				"background": "#fa00fa",
+				"color": "#ffffff"
+			},
+			{
+				"background": "#ffa500",
+				"color": "#000000"
+			},
+			{
+				"background": "#428bca",
+				"color": "#ffffff"
+			},
+			{
+				"background": "#ffff00",
+				"color": "#000000"
+			}
+		]
+	},
+	"ignoreSearchRedirects": true,
+	"incognitoTabsForgetHistory": true,
+	"lastOpeningMethod": "openNewTab",
+	"lastUpdated": 0,
+	"lastUsedMethod": "",
+	"modify_mycroftproject": true,
+	"multilinesAsSeparateSearches": false,
+	"multilinesAsSeparateSearchesLimit": 10,
+	"nativeAppDownloadFolder": "",
+	"nightMode": true,
+	"nodeTree": {
+		"children": [
+			{
+				"id": "MA4P5XJ6ZIZE2",
+				"type": "searchEngine",
+				"hidden": false,
+				"title": "Google",
+				"parentId": "___root___"
+			},
+			{
+				"id": "MA4P5XJ6079OW",
+				"type": "searchEngine",
+				"hidden": false,
+				"title": "Amazon.com",
+				"parentId": "___root___"
+			},
+			{
+				"id": "MA4P5XJ69W0TE",
+				"type": "searchEngine",
+				"hidden": false,
+				"title": "Facebook",
+				"parentId": "___root___"
+			},
+			{
+				"id": "MA4P5XJ7C61K9",
+				"type": "searchEngine",
+				"hidden": false,
+				"title": "YouTube",
+				"parentId": "___root___"
+			},
+			{
+				"id": "MA4P5XJ7364AU",
+				"type": "searchEngine",
+				"hidden": false,
+				"title": "Twitter",
+				"parentId": "___root___"
+			},
+			{
+				"id": "MA4P5XJ7LJ3D7",
+				"type": "searchEngine",
+				"hidden": false,
+				"title": "Pinterest",
+				"parentId": "___root___"
+			},
+			{
+				"id": "MA4P5XJ7Q1ZO0",
+				"type": "searchEngine",
+				"hidden": false,
+				"title": "Bing",
+				"parentId": "___root___"
+			},
+			{
+				"id": "MA4P5XJ7YNZ21",
+				"type": "searchEngine",
+				"hidden": false,
+				"title": "DuckDuckGo",
+				"parentId": "___root___"
+			},
+			{
+				"id": "MA4P5XJ7F1H4Y",
+				"type": "searchEngine",
+				"hidden": false,
+				"title": "eBay",
+				"parentId": "___root___"
+			},
+			{
+				"id": "MA4P5XJ77KOUV",
+				"type": "searchEngine",
+				"hidden": false,
+				"title": "Wikipedia (en)",
+				"parentId": "___root___"
+			},
+			{
+				"id": "MA4P5XJ72YK0O",
+				"type": "searchEngine",
+				"hidden": false,
+				"title": "Google Site Search",
+				"parentId": "___root___"
+			}
+		],
+		"displayType": "grid",
+		"hidden": false,
+		"id": "___root___",
+		"title": "/",
+		"type": "folder"
+	},
+	"omniboxDefaultToLastUsedEngine": false,
+	"omniboxLastUsedIds": [],
+	"omniboxPseudoDisabled": false,
+	"omniboxSearch": "openBackgroundTab",
+	"openFoldersOnHoverTimeout": 1000,
+	"pageTiles": {
+		"closeOnBorder": true,
+		"closeOnShake": false,
+		"columns": 4,
+		"deadzone": 4,
+		"enabled": false,
+		"grid": [
+			"LQ69UWMF13WZN",
+			"LLJXBLF9STQC0",
+			"LVSOOYRXUBE3M",
+			"LYS36IM4BT1KQ",
+			"M0BAH35W026VZ",
+			"LLJX9Y0JOBN4Q",
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		"openMethod": "openBackgroundTab",
+		"paletteString": "05299e-5e4ae3-947bd3-f0a7a0-f26ca7",
+		"rows": 3
+	},
+	"popupWindow": {
+		"height": "798px",
+		"position": "",
+		"width": "525px",
+		"left": "1184px",
+		"top": "256px",
+		"reuse": true,
+		"rememberPosition": true
+	},
+	"preventDuplicateSearchTabs": true,
+	"quickMenu": true,
+	"quickMenuAllowContextMenuNew": false,
+	"quickMenuAlt": "noAction",
+	"quickMenuAlwaysShowMenuBar": false,
+	"quickMenuAuto": true,
+	"quickMenuAutoAlt": false,
+	"quickMenuAutoCtrl": false,
+	"quickMenuAutoMaxChars": 0,
+	"quickMenuAutoMinChars": 0,
+	"quickMenuAutoOnDoubleClick": true,
+	"quickMenuAutoOnInputs": true,
+	"quickMenuAutoShift": false,
+	"quickMenuAutoTimeout": 500,
+	"quickMenuBookmarks": false,
+	"quickMenuCancelDeadzone": 2,
+	"quickMenuCancelOnMousewheel": true,
+	"quickMenuCascadingFoldersHoverTimeout": 50,
+	"quickMenuCloseOnClick": true,
+	"quickMenuCloseOnEdit": true,
+	"quickMenuCloseOnScroll": true,
+	"quickMenuCloseOnTabChange": true,
+	"quickMenuColumns": 4,
+	"quickMenuColumnsMinimum": 8,
+	"quickMenuContextualLayoutFlattenLimit": 5,
+	"quickMenuCtrl": "openSideBarAction",
+	"quickMenuDefaultView": "grid",
+	"quickMenuDeselectTextOnSearch": false,
+	"quickMenuDisabledInNewTabs": false,
+	"quickMenuDomLayout": "toolBar,quickMenuElement,!menuBar,searchBarContainer,!titleBar,!contextsBar",
+	"quickMenuDragAlt": false,
+	"quickMenuDragCtrl": false,
+	"quickMenuDragShift": false,
+	"quickMenuFocusOnOpen": true,
+	"quickMenuFolderAlt": "noAction",
+	"quickMenuFolderCtrl": "noAction",
+	"quickMenuFolderLeftClick": "openFolder",
+	"quickMenuFolderMiddleClick": "openNewWindow",
+	"quickMenuFolderRightClick": "openBackgroundTab",
+	"quickMenuFolderShift": "noAction",
+	"quickMenuHideSeparatorsInGrid": false,
+	"quickMenuHoldTimeout": 300,
+	"quickMenuIcon": {
+		"enabled": false,
+		"scale": 1,
+		"url": "icons/icon.svg",
+		"x": 10,
+		"y": 10
+	},
+	"quickMenuIconScale": 1,
+	"quickMenuKey": 0,
+	"quickMenuLeftClick": "openNewTab",
+	"quickMenuMiddleClick": "openPopup",
+	"quickMenuMouseButton": 1,
+	"quickMenuMoveContextMenuMethod": "",
+	"quickMenuOffset": {
+		"x": 0,
+		"y": 25
+	},
+	"quickMenuOnAudios": true,
+	"quickMenuOnDrag": false,
+	"quickMenuOnImages": true,
+	"quickMenuOnKey": false,
+	"quickMenuOnLinks": true,
+	"quickMenuOnMouse": true,
+	"quickMenuOnMouseAlt": false,
+	"quickMenuOnMouseCtrl": false,
+	"quickMenuOnMouseMethod": "hold",
+	"quickMenuOnMouseOpenWithoutSelection": true,
+	"quickMenuOnMouseShift": false,
+	"quickMenuOnSimpleClick": {
+		"alt": false,
+		"button": 1,
+		"ctrl": false,
+		"enabled": false,
+		"shift": false,
+		"useInnerText": false
+	},
+	"quickMenuOnVideos": true,
+	"quickMenuOnlyOpenIfOverSelection": false,
+	"quickMenuOpeningOpacity": 50,
+	"quickMenuPosition": "bottom center",
+	"quickMenuPreventLinksOnMiddleButton": false,
+	"quickMenuPreventPageClicks": false,
+	"quickMenuPreventScrollOnMiddleButton": false,
+	"quickMenuRegexMatchedEngines": false,
+	"quickMenuRightClick": "openCurrentTab",
+	"quickMenuRightClickTimeout": 500,
+	"quickMenuRows": 4,
+	"quickMenuRowsSingleColumn": 2,
+	"quickMenuScale": 1.25,
+	"quickMenuSearchBar": "hidden",
+	"quickMenuSearchBarFocus": false,
+	"quickMenuSearchBarSelect": true,
+	"quickMenuSearchHotkeys": "noAction",
+	"quickMenuSearchHotkeysFolders": "noAction",
+	"quickMenuSearchOnMouseUp": true,
+	"quickMenuShift": "openSideBarAction",
+	"quickMenuShowHotkeysInTitle": false,
+	"quickMenuShowRecentlyUsed": true,
+	"quickMenuTheme": "lite",
+	"quickMenuToolbarRows": 1,
+	"quickMenuTools": [
+		{
+			"name": "recentlyused",
+			"disabled": true
+		},
+		{
+			"name": "download",
+			"disabled": false
+		},
+		{
+			"name": "copy",
+			"disabled": false
+		},
+		{
+			"name": "lastused",
+			"disabled": false
+		},
+		{
+			"name": "edit",
+			"disabled": true
+		},
+		{
+			"name": "disable",
+			"disabled": true
+		},
+		{
+			"name": "toggleview",
+			"disabled": true
+		},
+		{
+			"name": "close",
+			"disabled": true
+		},
+		{
+			"name": "link",
+			"disabled": true
+		},
+		{
+			"name": "lock",
+			"disabled": true,
+			"persist": false
+		},
+		{
+			"name": "repeatsearch",
+			"disabled": true,
+			"persist": false
+		},
+		{
+			"name": "findinpage",
+			"disabled": true
+		},
+		{
+			"name": "openoptions",
+			"disabled": true
+		},
+		{
+			"name": "toggle_theme",
+			"disabled": true
+		},
+		{
+			"name": "toggle_hotkeys",
+			"disabled": true
+		},
+		{
+			"name": "block",
+			"disabled": true
+		},
+		{
+			"name": "showhide",
+			"disabled": true
+		},
+		{
+			"name": "open_image",
+			"disabled": true
+		},
+		{
+			"name": "context",
+			"disabled": true
+		},
+		{
+			"name": "sort",
+			"disabled": true
+		}
+	],
+	"quickMenuToolsAsToolbar": false,
+	"quickMenuToolsPosition": "top",
+	"quickMenuUseCascadingFolders": true,
+	"quickMenuUseContextualLayout": true,
+	"recentlyUsedList": [
+		"LQFYKME16KTVT",
+		"M0QXLCE522TW5",
+		"LLJXK5797F5OT",
+		"LLSWE57CBDFOL",
+		"LLJWOTZQEVABD",
+		"M7VSJD8K6IRU2",
+		"M9UGQ0WD4EFJV",
+		"M178XBE6TBD2F",
+		"M9UH6L6OMIHCW",
+		"M0OT3Y67DYXRG",
+		"M0OTT9A8MA5EX",
+		"LLJXBLF9STQC0"
+	],
+	"recentlyUsedListLength": 12,
+	"rememberLastOpenedFolder": false,
+	"removeConsecutiveSeparators": true,
+	"saveMenuDisplayMode": true,
+	"scriptsUseBlobs": false,
+	"searchBarCloseAfterNewTab": false,
+	"searchBarCloseAfterSearch": true,
+	"searchBarColumns": 8,
+	"searchBarDefaultView": "grid",
+	"searchBarDisplayLastSearch": true,
+	"searchBarDomLayout": "",
+	"searchBarEnableHistory": true,
+	"searchBarHistory": [],
+	"searchBarHistoryLength": 100,
+	"searchBarIcon": "icons/icon.svg",
+	"searchBarSuggestions": true,
+	"searchBarSuggestionsCount": 20,
+	"searchBarToolbarRows": 1,
+	"searchBaricon": "icons/icon.svg",
+	"searchEngines": [
+		{
+			"searchForm": "https://www.google.com/",
+			"template": "https://www.google.com/search?q={searchTerms}",
+			"icon_url": "/defaultEnginesIcons/google.svg",
+			"title": "Google",
+			"icon_base64String": "",
+			"method": "GET",
+			"params": [],
+			"queryCharset": "UTF-8",
+			"hidden": false,
+			"id": "MA4P5XJ6ZIZE2",
+			"type": "searchEngine"
+		},
+		{
+			"searchForm": "https://www.amazon.com/",
+			"template": "https://www.amazon.com/exec/obidos/external-search/?field-keywords={searchTerms}&ie={inputEncoding}&mode=blended",
+			"icon_url": "/defaultEnginesIcons/amazon.svg",
+			"title": "Amazon.com",
+			"icon_base64String": "",
+			"method": "GET",
+			"params": [],
+			"queryCharset": "UTF-8",
+			"hidden": false,
+			"id": "MA4P5XJ6079OW",
+			"type": "searchEngine"
+		},
+		{
+			"searchForm": "https://www.facebook.com/",
+			"template": "https://www.facebook.com/search/top/?q={searchTerms}&opensearch=1",
+			"icon_url": "/defaultEnginesIcons/facebook.svg",
+			"title": "Facebook",
+			"icon_base64String": "",
+			"method": "GET",
+			"params": [],
+			"queryCharset": "UTF-8",
+			"hidden": false,
+			"id": "MA4P5XJ69W0TE",
+			"type": "searchEngine"
+		},
+		{
+			"searchForm": "http://www.youtube.com",
+			"template": "http://www.youtube.com/results?search_query={searchTerms}",
+			"icon_url": "/defaultEnginesIcons/youtube.svg",
+			"title": "YouTube",
+			"icon_base64String": "",
+			"method": "GET",
+			"params": [],
+			"queryCharset": "UTF-8",
+			"hidden": false,
+			"id": "MA4P5XJ7C61K9",
+			"type": "searchEngine"
+		},
+		{
+			"searchForm": "https://twitter.com/",
+			"template": "https://twitter.com/search?q={searchTerms}&source=desktop-search",
+			"icon_url": "/defaultEnginesIcons/twitter.svg",
+			"title": "Twitter",
+			"icon_base64String": "",
+			"method": "GET",
+			"params": [],
+			"queryCharset": "UTF-8",
+			"hidden": false,
+			"id": "MA4P5XJ7364AU",
+			"type": "searchEngine"
+		},
+		{
+			"searchForm": "http://www.pinterest.com/search/pins/",
+			"template": "http://www.pinterest.com/search/pins/?q={searchTerms}",
+			"icon_url": "/defaultEnginesIcons/pinterest.svg",
+			"title": "Pinterest",
+			"icon_base64String": "",
+			"method": "GET",
+			"params": [],
+			"queryCharset": "UTF-8",
+			"hidden": false,
+			"id": "MA4P5XJ7LJ3D7",
+			"type": "searchEngine"
+		},
+		{
+			"searchForm": "https://www.bing.com/",
+			"template": "https://www.bing.com/search?q={searchTerms}",
+			"icon_url": "/defaultEnginesIcons/bing.svg",
+			"title": "Bing",
+			"icon_base64String": "",
+			"method": "GET",
+			"params": [],
+			"queryCharset": "UTF-8",
+			"hidden": false,
+			"id": "MA4P5XJ7Q1ZO0",
+			"type": "searchEngine"
+		},
+		{
+			"searchForm": "https://duckduckgo.com/",
+			"template": "https://duckduckgo.com/?q={searchTerms}",
+			"icon_url": "/defaultEnginesIcons/duckduckgo.svg",
+			"title": "DuckDuckGo",
+			"icon_base64String": "",
+			"method": "GET",
+			"params": [],
+			"queryCharset": "UTF-8",
+			"hidden": false,
+			"id": "MA4P5XJ7YNZ21",
+			"type": "searchEngine"
+		},
+		{
+			"searchForm": "https://www.ebay.com/",
+			"template": "https://www.ebay.com/sch/i.html?_nkw={searchTerms}",
+			"icon_url": "/defaultEnginesIcons/ebay.svg",
+			"title": "eBay",
+			"icon_base64String": "",
+			"method": "GET",
+			"params": [],
+			"queryCharset": "UTF-8",
+			"hidden": false,
+			"id": "MA4P5XJ7F1H4Y",
+			"type": "searchEngine"
+		},
+		{
+			"searchForm": "https://en.wikipedia.org/",
+			"template": "https://en.wikipedia.org/wiki/Special:Search?search={searchTerms}",
+			"icon_url": "/defaultEnginesIcons/wikipedia.svg",
+			"title": "Wikipedia (en)",
+			"icon_base64String": "",
+			"method": "GET",
+			"params": [],
+			"queryCharset": "UTF-8",
+			"hidden": false,
+			"id": "MA4P5XJ77KOUV",
+			"type": "searchEngine"
+		},
+		{
+			"searchForm": "https://www.google.com",
+			"template": "https://www.google.com/search?q=site%3A{selectdomain}+{searchTerms}",
+			"icon_url": "/defaultEnginesIcons/google_site.svg",
+			"title": "Google Site Search",
+			"icon_base64String": "",
+			"method": "GET",
+			"params": [],
+			"queryCharset": "UTF-8",
+			"hidden": false,
+			"id": "MA4P5XJ72YK0O",
+			"type": "searchEngine"
+		}
+	],
+	"searchEnginesManagerShowContexts": true,
+	"shakeSensitivity": 4,
+	"showDescriptionsInTooltips": true,
+	"showStatusBar": false,
+	"sideBar": {
+		"closeAfterSearch": false,
+		"columns": 6,
+		"domLayout": "",
+		"enabled": true,
+		"height": 400,
+		"hotkey": [],
+		"offsets": {
+			"bottom": 9007199254740991,
+			"left": 9007199254740991,
+			"right": 0,
+			"top": 0
+		},
+		"openOnResults": false,
+		"openOnResultsLastOpenedFolder": false,
+		"openOnResultsMinimized": false,
+		"position": "right",
+		"rememberState": false,
+		"scale": 0.5,
+		"setMinWidth": true,
+		"singleColumn": false,
+		"startOpen": false,
+		"widget": {
+			"enabled": false,
+			"offset": 100,
+			"position": "right"
+		},
+		"windowType": "undocked"
+	},
+	"sideBarToolbarRows": 1,
+	"syncWithFirefoxSearch": false,
+	"toolBarMenuDisablePageClicks": false,
+	"userShortcuts": [],
+	"userStyles": "/* Requires ContextSearch-web-ext */\n/* https://github.com/ssborbis/ContextSearch-web-ext */\n/* Preferred - Copy to ContextSearch-web-ext, General Settings > Custom CSS */\n/* 'OR' import contextsearchConfig.css in userContent.css - Works but doesn't style input search box */\n\n:root {\n  --font: 10px !important;\n  --folder-color: transparent !important;\n  --border: var(--tab-selected-outline-color) !important; /* userChrome.css Color */\n  --background: var(--lwt-accent-color) !important; /* userChrome.css Color */\n  --tools-color: var(--lwt-text-color) !important; /* userChrome.css Color */\n  --tb-bgcolor: var(--toolbar-bgcolor) !important; /* userChrome.css Color */\n  --selected: var(--in-content-item-selected) !important; /* userChrome.css Color */\n  --separator: var(--selected) !important;\n  --hover: var(--selected) !important;\n  --folder-label-color-singlecolumn: var(--lwt-text-color) !important;\n  color: var(--tools-color) !important;\n}\n\nGROUP {\n  padding: 0 !important;\n  --group-color: var(--tb-bgcolor) !important;\n  > LABEL {\n      color: var(--tools-color) !important;\n      padding: 4px !important;\n      font-family: \"Arial\", Helvetica, sans-serif !important;\n      font-weight: bold;\n      font-size: var(--font) !important;\n      text-transform: uppercase !important;\n      background-color: var(--tb-bgcolor);\n      box-shadow: 0 1px 40px 25px var(--selected) !important;\n  }\n}\n\n.tile {\n  margin: 1px 0 2px 0 !important;\n  border: none !important;\n\n  &:hover {\n      border-radius: 4px !important;\n      box-shadow: 0 0 0 1px var(--border), 0 1px 10px 2px var(--border) !important;\n  }\n\n  &[data-type=\"separator\"] {\n      margin: 0 !important;\n      height: 0 !important;\n      width: 100% !important;\n      border-bottom: 1px solid var(--border) !important;\n      box-shadow: none !important;\n  }\n  /* Filters history.svg black icon to match color scheme, in this case for #c0caf5 */\n  /* https://codepen.io/sosuke/pen/Pjoqqp - use this to find your filter color*/\n  &[style*=\"history.svg\"] {\n    filter: invert(98%) sepia(28%) saturate(4501%) hue-rotate(175deg) brightness(100%) contrast(92%) !important;\n  }\n}\n\n#quickMenuElement {\n  margin-bottom: -1px !important;\n}\n\n.quickMenuMore {\n  border-radius: 0 !important;\n  background: var(--tb-bgcolor) !important;\n}\n\n#searchBar {\n  color: var(--tools-color) !important;\n  font-size: var(--font) !important;\n  height: 20px !important;\n  outline: none !important;\n  background-color: var(--tb-bgcolor) !important;\n\n  &:focus {\n      border: none !important;\n      background-color: var(--tb-bgcolor) !important;\n  }\n}\n\n#searchBarContainer > .tool {\n  font-size: var(--font) !important;\n  padding: 0 !important;\n}\n\n#suggestions {\n  color: var(--tools-color) !important;\n  font-size: var(--font) !important;\n  margin-bottom: -1px !important;\n  border: none !important;\n  border-top: 1px solid var(--border) !important;\n  background-color: var(--folder-color) !important;\n\n  > DIV {\n      display: flex !important;\n      flex-direction: column !important;\n      justify-content: flex-end !important;\n      height: 15px !important;\n      font-size: var(--font) !important;\n      padding: 0 0 3px 2px !important;\n\n      .tool {\n          visibility: collapse !important;\n      }\n  }\n}\n\n.selectedFocus,\n.selectedNoFocus {\n  color: var(--selected) !important;\n  border-radius: 4px !important;\n  background-color: var(--selected) !important;\n  box-shadow: 0 0 0 1px var(--selected) !important;\n}\n\n/* Will not resolve userChrome.css variable assignments, ONLY from userContent.css */\n#CS_quickMenuIframe,\n.CS_quickMenuIframe {\n  opacity: .2 !important;\n  border: none !important;\n  border-radius: 4px !important;\n  box-shadow: 0 0 0 1px var(--tab-selected-outline-color) !important; /* userContent.css Color */\n\n  &:hover {\n      /* transition: all 300ms ease-in-out 0ms !important; */\n      opacity: .9 !important;\n      box-shadow: 0 0 0 1px var(--tab-selected-outline-color), 0 0 20px -5px var(--tab-selected-outline-color) !important; /* userContent.css Color */\n  }\n}",
+	"userStylesEnabled": true,
+	"userStylesGlobal": "#CS_quickMenuIframe, .CS_quickMenuIframe {\n  opacity: 0.2 !important; border: medium !important; border-radius: 4px !important; box-shadow: 0 0 0 1px var(--tab-selected-outline-color)  !important;\n  &:hover { opacity: 0.9 !important; box-shadow: 0 0 0 1px var(--tab-selected-outline-color), 0 0 20px -5px var(--tab-selected-outline-color)  !important; }\n}\n",
+	"version": "1.47.12",
+	"waitOnInjectionTimeout": 15000,
+	"lastUsedId": "LQFYKME16KTVT",
+	"exportJsonPretty": true,
+	"quickMenuCloseOnEditKeydown": false,
+	"quickMenuRepeatSearchHideMenu": true,
+	"quickMenuRepeatSearchDisableOnEscape": true,
+	"quickMenuReuseVsClose": false,
+	"contextMenuOnMouseDown": false,
+	"resultsNavigatorSkipMenu": false
+}
