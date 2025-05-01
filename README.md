@@ -35,7 +35,7 @@ Not Compatible with Firefox 136.0.2 and below
   toolkit.legacyUserProfileCustomizations.stylesheets = true
   sidebar.verticalTabs = false
   sidebar.revamp = false
-  widget.windows.mica =
+  widget.windows.mica = false
 
   // as of version 138, it's default is '2', turning on mica for content popup menu
   widget.windows.mica.popups = 0
