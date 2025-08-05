@@ -4,8 +4,8 @@ Custom Firefox files with a focus on minimizing visual UI elements until it's ne
 Only works with Sidebery installed - Sidebery Extension Required
 https://github.com/mbnuqw/sidebery
 
-Compatible with Firefox 138 as of 2025/05/01
-Not Compatible with Firefox 136.0.2 and below
+Compatible with Firefox 139 as of 2025/05/28   
+Not Compatible with versions below
 
 ## Features:
 - Autohide Main Toolbar
