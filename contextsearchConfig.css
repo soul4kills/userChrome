@@ -6,14 +6,14 @@
 :root {
   --font: 10px !important;
   --folder-color: transparent !important;
-  --border: var(--tab-selected-outline-color) !important; /* userChrome.css Color */
-  --background: var(--lwt-accent-color) !important; /* userChrome.css Color */
-  --tools-color: var(--lwt-text-color) !important; /* userChrome.css Color */
-  --tb-bgcolor: var(--toolbar-bgcolor) !important; /* userChrome.css Color */
-  --selected: var(--in-content-item-selected) !important; /* userChrome.css Color */
+  --border: var(--tab-selected-outline-color, rgb(255, 100, 244)) !important; /* userChrome.css Color */
+  --background: var(--lwt-accent-color, rgb(24, 25, 38)) !important; /* userChrome.css Color */
+  --tools-color: var(--lwt-text-color, rgb(192, 202, 245)) !important; /* userChrome.css Color */
+  --tb-bgcolor: var(--toolbar-bgcolor, rgb(36, 40, 59)) !important; /* userChrome.css Color */
+  --selected: var(--in-content-item-selected, rgba(255, 100, 244, 0.35)) !important; /* userChrome.css Color */
   --separator: var(--selected) !important;
   --hover: var(--selected) !important;
-  --folder-label-color-singlecolumn: var(--lwt-text-color) !important;
+  --folder-label-color-singlecolumn: var(--tools-color) !important;
   color: var(--tools-color) !important;
 }
 
@@ -81,6 +81,19 @@ GROUP {
   font-size: var(--font) !important;
   padding: 0 !important;
 }
+#moreSearchTermsIndicator {
+  background-color: var(--tb-bgcolor) !important;
+  font-size: 15px !important;
+  right: 2px !important;
+  padding: 0px 5px !important;
+  margin-top: 2px !important;
+  cursor: pointer !important;
+  color: var(--selected)!important;
+  font-family: "Arial", Helvetica, sans-serif !important;
+  z-index: 10 !important;
+  border-radius: 4px !important;
+  box-shadow: 0 0 0 1px var(--selected) !important;
+}
 
 #suggestions {
   color: var(--tools-color) !important;
@@ -118,11 +131,11 @@ GROUP {
   opacity: .2 !important;
   border: none !important;
   border-radius: 4px !important;
-  box-shadow: 0 0 0 1px var(--tab-selected-outline-color) !important; /* userContent.css Color */
+  box-shadow: 0 0 0 1px var(--tab-selected-outline-color, rgb(255, 100, 244)) !important; /* userContent.css Color */
 
   &:hover {
       /* transition: all 300ms ease-in-out 0ms !important; */
       opacity: .9 !important;
-      box-shadow: 0 0 0 1px var(--tab-selected-outline-color), 0 0 20px -5px var(--tab-selected-outline-color) !important; /* userContent.css Color */
+      box-shadow: 0 0 0 1px var(--tab-selected-outline-color, rgb(255, 100, 244)), 0 0 20px -5px var(--tab-selected-outline-color, rgb(255, 100, 244)) !important; /* userContent.css Color */
   }
 }
