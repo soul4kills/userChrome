@@ -74,7 +74,8 @@ div#root.root.Sidebar {
 		overflow: scroll !important;
 		flex-wrap: nowrap!important;
 		padding: 6px 3px 6px 3px !important;
-		scrollbar-width: 1px !important;
+		scrollbar-width: none !important;
+		&:hover { scrollbar-width: thin !important;  }
 	}
 	.scroll-container { padding: 1px 0 0 0 !important; }
 	.top-horizontal-box { margin-bottom: 0px !important; }
