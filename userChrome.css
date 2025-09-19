@@ -1,7 +1,8 @@
 @import url(chrome/autohide_main_toolbar.css);
 @import url(chrome/autohide_sidebar.css);
-@import url(chrome/drag_window_from_urlbar.css);
+/*@import url(chrome/drag_window_from_urlbar.css);*/
 @import url(userConfig.css); /* Make adjustments to userConfig.css */
+@import url(chrome/compact_extensions_panel.css);
 :root,
 #sidebar-box {
 	transition: all var(--uc-transition-global);
@@ -54,10 +55,10 @@
 	/* Hide tab bar when Sidebery is active */
 #main-window:has(#sidebar-box[sidebarcommand*="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"][checked*="true"]) {
 	/* Removes 1px gap from the top */
-	stack.browserStack,
+	/*stack.browserStack,
 	#sidebar-box {
 		margin-top: -1px;
-	}
+	}*/
 	.titlebar-button {
 		height: abs(var(--uc-navbar-transform));
 		width: 35px;
@@ -118,8 +119,8 @@
 		#sidebar-box {
 			--uc-sidebar-width: 0px !important;
 			&:hover {
-				& > #sidebar-header,
-				& > #sidebar {
+				& #sidebar-header,
+				& #sidebar {
 					min-width: var(--uc-sidebar-hover-width) !important;
 					opacity: 95%;
 					transition-delay: -100ms !important;
@@ -230,4 +231,74 @@ toolbarspring {
 	#sidebar-launcher-splitter {
 		display: none !important;
 	}
+}
+
+@-moz-document url("chrome://global/content/pictureinpicture/player.xhtml") {
+
+    @media (width <= 630px) {
+        #audio {
+            position: absolute !important;
+            top: calc(10px - (100vh - 2 * var(--resize-margin)) + var(--controls-bottom-upper-height) + var(--player-control-item-height) + var(--controls-bottom-distance)) !important;
+            left: calc(10px + var(--player-control-item-height) + 10px) !important;
+            width: var(--player-control-item-height) !important;
+            height: var(--player-control-item-height) !important;
+            z-index: 14 !important;
+            grid-area: initial !important;
+        }
+
+        #audio::after {
+            display: none !important;
+        }
+
+        #audio-scrubber {
+            display: block !important;
+            position: absolute !important;
+            top: calc(10px - (100vh - 2 * var(--resize-margin)) + var(--controls-bottom-upper-height) + var(--player-control-item-height) + var(--controls-bottom-distance)) !important;
+            left: calc(10px + var(--player-control-item-height) + 10px) !important;
+            width: calc(var(--player-control-item-height) + 5px + clamp(80px, 20vw, 120px) + 5px) !important;
+            height: var(--player-control-item-height) !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+            z-index: 13 !important;
+            -moz-appearance: auto !important;
+            appearance: auto !important;
+            background: transparent !important;
+            padding-left: calc(var(--player-control-item-height) + 5px) !important;
+            padding-right: 5px !important;
+            border: initial !important;
+            box-sizing: border-box !important;
+            transition: opacity 0.2s ease-in-out, visibility 0s linear 0.2s, width 0.25s ease-in-out;
+        }
+
+        #audio:hover + #audio-scrubber,
+        #audio-scrubber:hover {
+            opacity: 1 !important;
+            visibility: visible !important;
+            pointer-events: auto !important;
+        }
+    }
+
+    @media (width <= 280px) {
+        #audio-scrubber {
+            width: calc(var(--player-control-item-height) + 5px + clamp(40px, 10vw, 70px) + 5px) !important;
+        }
+    }
+
+    @media (width <= 300px) {
+        .controls-bottom-lower {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .center-controls {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+    }
 }

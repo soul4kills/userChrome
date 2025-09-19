@@ -9,27 +9,27 @@ div.popup[style*="--fg"][style*="--bg"] {
 		border-radius: 4px !important;
 		box-shadow: 0 0 0 1px var(--tab-selected-outline-color), 0 1px 20px -5px var(--tab-selected-outline-color) !important;
 	}
-	right: auto !important; left: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)) !important;
-	@media not -moz-pref("sidebar.position_start") { left: auto !important;  right: calc(var(--uc-sidebar-hover-width) - var(--uc-sidebar-width)) !important;}
+	right: unset !important; left: calc((var(--uc-sidebar-hover-width) - (var(--uc-sidebar-width))) * 1.25) !important;
+	@media not -moz-pref("sidebar.position_start") { left: unset !important;  right: calc((var(--uc-sidebar-hover-width) - (var(--uc-sidebar-width))) * 1.25) !important;}
 }
 	/* Fix pop-in-page tab preview alignment - Specifically when maximized or uc.full.tabs is true */
 @media -moz-pref("uc.full.tabs"), (width: 1728px) { /* Adjustments needed for user viewport size when MAXIMIZED */
 	div.popup[style*="--fg"][style*="--bg"] {
-		right: auto !important; left: 0px !important;
-		@media not -moz-pref("sidebar.position_start") { left: auto !important; right: 0px !important;}
+		right: unset !important; left: 0px !important;
+		@media not -moz-pref("sidebar.position_start") { left: unset !important; right: 0px !important;}
 	}
 }
 	/* Tab preview fix alignment when uc.chromeless is toggled to true */
 @media -moz-pref("uc.chromeless") {
 	div.popup[style*="--fg"][style*="--bg"] {
-		right: auto !important; left: var(--uc-sidebar-hover-width) !important;
-		@media not -moz-pref("sidebar.position_start") { left: auto !important; right: var(--uc-sidebar-hover-width) !important;}
+		right: unset !important; left: calc(var(--uc-sidebar-hover-width) * 1.25) !important;
+		@media not -moz-pref("sidebar.position_start") { left: unset !important; right: calc(var(--uc-sidebar-hover-width) * 1.25) !important;}
 	}
 }
 #sdbr_preview_root {
 	/* opacity: .95 !important;  disabled because it wouldn't hide itself*/
-	right: auto !important; left: 1px !important;
-	@media not -moz-pref("sidebar.position_start") { left: auto !important; right: 1px !important; }
+	right: unset !important; left: 1px !important;
+	@media not -moz-pref("sidebar.position_start") { left: unset !important; right: 1px !important; }
 }
 /* End Tab Preview Crap */
 /* Collapses content on overflow */
@@ -38,8 +38,8 @@ div.popup[style*="--fg"][style*="--bg"] {
 	div#root.root.Sidebar {
 		--tabs-indent: unset !important;
 		--tabs-normal-fg: unset !important;
-		.audio { z-index: 100 !important; }
-		.ScrollBox > .scroll-container { overflow: hidden !important;	}
+		.audio { z-index: 100 !important; box-shadow: none !important; }
+		.ScrollBox > .scroll-container { overflow: hidden !important; }
 		.Tab {
 			.title { visibility: collapse !important;}
 			.audio {
@@ -75,12 +75,24 @@ div#root.root.Sidebar {
 		flex-wrap: nowrap!important;
 		padding: 6px 3px 6px 3px !important;
 		scrollbar-width: none !important;
+  		transform: rotateX(180deg);  /* Flip the container upside down */
 		&:hover { scrollbar-width: thin !important;  }
+		& > .tab-wrapper { transform: rotateX(180deg); } /* Flip the children back to normal */
+	}
+	.Tab {
+		&[data-pin="true"] .audio {
+			transform: translate(5px, 8px) !important;
+		}
+		&[data-active="true"] .body {
+			box-shadow: 0 0 0 1px var(--tab-selected-outline-color),0 1px 20px -5px var(--tab-selected-outline-color) !important;
+		}
 	}
 	.scroll-container { padding: 1px 0 0 0 !important; }
 	.top-horizontal-box { margin-bottom: 0px !important; }
-	.NavigationBar .nav-item .audio { background-color: unset !important;}
-	.Tab[data-active="true"] .body { box-shadow: 0 0 0 1px var(--tab-selected-outline-color),0 1px 20px -5px var(--tab-selected-outline-color) !important; }
+	.audio {
+		background-color: unset !important;
+		box-shadow: none !important;
+	}
 }
 	/* Sidebery Colors */
 #sdbr_preview_root {
