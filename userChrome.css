@@ -172,12 +172,22 @@ toolbarspring {
 #zoom-controls separator,
 	/* Remove Menu Items */
 #context-openlink,
-#context-openlinkprivate,
+/* #context-openlinkprivate, */
 #context-savelinktopocket,
 #context-sendimage,
 #context-viewimageinfo,
 /* #context-inspect, */
 #context-inspect-a11y,
+#context-openlinkinusercontext-menu,
+#context-print-selection,
+#context-sep-screenshots,
+#context-take-screenshot,
+#context-savepage,
+#context-viewsource,
+#context-viewpartialsource-selection,
+#context-savelink,
+#context-bookmarklink,
+#context-copylink,
 .titlebar-restore,
 .titlebar-max,
 .titlebar-close {
