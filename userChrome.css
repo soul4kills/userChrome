@@ -98,6 +98,10 @@
 		top: 0px;
 		transition-delay: 0ms;
 	}
+	toolbox:focus-within .titlebar-buttonbox-container {
+		display: block !important;
+		position: absolute !important;
+	}
 	/* Add padding for window controls */
 	#PanelUI-button,
 	#personal-bookmarks {
