@@ -133,6 +133,14 @@
 		}
 	}
 }
+
+#tabbrowser-tab-tooltip,#places-tooltip-insecure-icon,
+#btTooltip,#un-toolbar-tooltip,
+#tooltip,.tooltip,#aHTMLTooltip,
+#urlTooltip,tooltip,.places-tooltip {
+	opacity: 0.8 !important;
+}
+
 #editBMPanel_folderTree {
   min-height: 340px;
 }

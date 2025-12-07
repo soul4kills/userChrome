@@ -41,14 +41,14 @@ div.popup[style*="--fg"][style*="--bg"] {
 		.audio { z-index: 100 !important; box-shadow: none !important; }
 		.ScrollBox > .scroll-container { overflow: hidden !important; }
 		.Tab {
-			.title { visibility: collapse !important }
+			.title,
+			.close, .exp  { visibility: collapse !important } /* Prevent tab closing  from touchscreen interaction */
 			.audio {
 				left: 10px  !important;
 				transform: scale(.80) !important;
 				transform: translateY(4px)  !important;
 				fill: var(--tabs-activated-fg);
 			}
-			.close { visibility: collapse !important } /* Prevent tab closing  from touchscreen interaction */
 		}
 	}
 }

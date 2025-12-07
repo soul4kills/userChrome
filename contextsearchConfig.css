@@ -132,9 +132,9 @@ GROUP {
 }
 
 /* Will not resolve userChrome.css variable assignments, ONLY from userContent.css */
-#CS_quickMenuIframe,
+
 .CS_quickMenuIframe {
-  opacity: .2 !important;
+  opacity: .3 !important;
   border: none !important;
   border-radius: 4px !important;
   box-shadow: 0 0 0 1px var(--tab-selected-outline-color, rgb(255, 100, 244)) !important; /* userContent.css Color */
