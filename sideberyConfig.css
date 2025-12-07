@@ -9,8 +9,8 @@ div.popup[style*="--fg"][style*="--bg"] {
 		border-radius: 4px !important;
 		box-shadow: 0 0 0 1px var(--tab-selected-outline-color), 0 1px 20px -5px var(--tab-selected-outline-color) !important;
 	}
-	right: unset !important; left: calc((var(--uc-sidebar-hover-width) - (var(--uc-sidebar-width))) * 1.25) !important;
-	@media not -moz-pref("sidebar.position_start") { left: unset !important;  right: calc((var(--uc-sidebar-hover-width) - (var(--uc-sidebar-width))) * 1.25) !important;}
+	right: unset !important; left: calc((var(--uc-sidebar-hover-width) - (var(--uc-sidebar-width))) + 1px) !important;
+	@media not -moz-pref("sidebar.position_start") { left: unset !important;  right: calc((var(--uc-sidebar-hover-width) - (var(--uc-sidebar-width))) + 1px) !important;}
 }
 	/* Fix pop-in-page tab preview alignment - Specifically when maximized or uc.full.tabs is true */
 @media -moz-pref("uc.full.tabs"), (width: 1728px) { /* Adjustments needed for user viewport size when MAXIMIZED */
@@ -22,8 +22,8 @@ div.popup[style*="--fg"][style*="--bg"] {
 	/* Tab preview fix alignment when uc.chromeless is toggled to true */
 @media -moz-pref("uc.chromeless") {
 	div.popup[style*="--fg"][style*="--bg"] {
-		right: unset !important; left: calc(var(--uc-sidebar-hover-width) * 1.25) !important;
-		@media not -moz-pref("sidebar.position_start") { left: unset !important; right: calc(var(--uc-sidebar-hover-width) * 1.25) !important;}
+		right: unset !important; left: calc(var(--uc-sidebar-hover-width) + 1px) !important;
+		@media not -moz-pref("sidebar.position_start") { left: unset !important; right: calc(var(--uc-sidebar-hover-width) * 1px) !important;}
 	}
 }
 #sdbr_preview_root {
