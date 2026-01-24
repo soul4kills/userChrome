@@ -14,45 +14,65 @@
   --separator: var(--selected) !important;
   --hover: var(--selected) !important;
   --folder-label-color-singlecolumn: var(--tools-color) !important;
-  color: var(--tools-color) !important;
+    color: var(--tools-color) !important;
+    font-size: var(--font) !important;
+    font-family: "Arial", Helvetica, sans-serif !important;
 }
 
 Body {
-  border: inherit !important;
+  border: none !important;
   border-radius: inherit !important;
 }
 
 GROUP {
-  padding: 0 !important;
+  /* direction: rtl; Makes some items align right side first */
   --group-color: var(--tb-bgcolor) !important;
   > LABEL {
-      color: var(--tools-color) !important;
-      padding: 4px !important;
-      font-family: "Arial", Helvetica, sans-serif !important;
-      font-weight: bold;
-      font-size: var(--font) !important;
-      text-transform: uppercase !important;
-      background-color: var(--tb-bgcolor);
-      box-shadow: 0 1px 40px 25px var(--selected) !important;
+    color: var(--tools-color) !important;
+    font-weight: bold;
+    text-transform: uppercase !important;
+    background-color: transparent;
+    box-shadow: 0 1px 40px 25px var(--selected) !important;
   }
 }
 
 .tile {
-  margin: 1px 0 2px 0 !important;
   border: none !important;
+  border-radius: 4px !important;
 
-  &:hover {
-      border-radius: 4px !important;
-      box-shadow: 0 0 0 1px var(--border), 0 1px 10px 2px var(--border) !important;
+  &::after {
+    content: none !important;
+  }
+
+  &:Hover {
+    box-shadow: inset 0 0 0 1px var(--border) !important;
+    background-color: var(--selected) !important;
   }
 
   &[data-type="separator"] {
-      margin: 0 !important;
-      height: 0 !important;
-      width: 100% !important;
-      border-bottom: 1px solid var(--border) !important;
-      box-shadow: none !important;
+    margin: 0 !important;
+    height: 0 !important;
+    width: 100% !important;
+    border-bottom: 1px solid var(--border) !important;
+    box-shadow: none !important;
   }
+
+  &[data-type="folder"] {
+    box-shadow: inset 0 0 0 1px rgba(255, 100, 244, 0.0), inset 0px 10px 10px -5px var(--selected) !important;
+
+    &:Hover {
+      box-shadow: inset 0 0 0 1px var(--border), inset 0px 10px 5px -5px var(--border) !important;
+      background-color: var(--selected) !important;
+    }
+  }
+
+  &.singleColumn {
+    font-size: var(--font) !important;
+    &:hover {
+      box-shadow: none !important;
+    }
+  }
+
   /* Filters history.svg black icon to match color scheme, in this case for #c0caf5 */
   /* https://codepen.io/sosuke/pen/Pjoqqp - use this to find your filter color*/
   &[style*="history.svg"] {
@@ -60,75 +80,63 @@ GROUP {
   }
 }
 
-#quickMenuElement {
-  margin-bottom: -1px !important;
-}
-
 .quickMenuMore {
-  border-radius: 0 !important;
+  border-radius: inherit !important;
   background: var(--tb-bgcolor) !important;
 }
 
 #searchBar {
-  color: var(--tools-color) !important;
   font-size: var(--font) !important;
   height: 20px !important;
-  outline: none !important;
   background-color: var(--tb-bgcolor) !important;
-
-  &:focus {
-      border: none !important;
-      background-color: var(--tb-bgcolor) !important;
-  }
+  width: calc(100% - 43px);
+  padding: 0 20px;
 }
 
 #searchBarContainer > .tool {
-  font-size: var(--font) !important;
   padding: 0 !important;
+  margin-top: 5px !important;
 }
 
 #moreSearchTermsIndicator {
-  background-color: var(--selected) !important;
   font-size: 15px !important;
-  right: 2px !important;
-  padding: 0px 5px !important;
-  margin-top: 2px !important;
+  background-color: var(--selected) !important;
+  right: 0px !important;
+  height: 20px !important;
+  margin: 0px !important;
   cursor: pointer !important;
   color: var(--tools-color) !important;
   font-family: "Arial", Helvetica, sans-serif !important;
-  z-index: 10 !important;
-  border-radius: 4px !important;
-  box-shadow: 0 0 0 1px var(--tab-selected-outline-color) !important;
+  z-index: 2 !important;
+  border-radius: 0px !important;
+  border-left: solid 1px var(--border);
 }
 
 #suggestions {
   color: var(--tools-color) !important;
   font-size: var(--font) !important;
-  margin-bottom: -1px !important;
   border: none !important;
   border-top: 1px solid var(--border) !important;
   background-color: var(--folder-color) !important;
 
   > DIV {
-      display: flex !important;
-      flex-direction: column !important;
-      justify-content: flex-end !important;
-      height: 15px !important;
-      font-size: var(--font) !important;
-      padding: 0 0 3px 2px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    height: 15px !important;
+    font-size: var(--font) !important;
+    padding: 0 0 3px 2px !important;
 
-      .tool {
-          visibility: collapse !important;
-      }
+    .tool {
+      visibility: collapse !important;
+    }
   }
 }
 
 .selectedFocus,
 .selectedNoFocus {
-  color: var(--selected) !important;
-  border-radius: 4px !important;
   background-color: var(--selected) !important;
-  box-shadow: 0 0 0 1px var(--selected) !important;
+  box-shadow: inset 0 0 0 1px var(--selected) !important;
 }
 
 /* Will not resolve userChrome.css variable assignments, ONLY from userContent.css */
@@ -140,8 +148,8 @@ GROUP {
   box-shadow: 0 0 0 1px var(--tab-selected-outline-color, rgb(255, 100, 244)) !important; /* userContent.css Color */
 
   &:hover {
-      /* transition: all 300ms ease-in-out 0ms !important; */
-      opacity: .9 !important;
-      box-shadow: 0 0 0 1px var(--tab-selected-outline-color, rgb(255, 100, 244)), 0 0 20px -5px var(--tab-selected-outline-color, rgb(255, 100, 244)) !important; /* userContent.css Color */
+    /* transition: all 300ms ease-in-out 0ms !important; */
+    opacity: .9 !important;
+    box-shadow: 0 0 0 1px var(--tab-selected-outline-color, rgb(255, 100, 244)), 0 0 20px -5px var(--tab-selected-outline-color, rgb(255, 100, 244)) !important; /* userContent.css Color */
   }
 }

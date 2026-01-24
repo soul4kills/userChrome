@@ -94,6 +94,7 @@ div#root.root.Sidebar {
 		background-color: unset !important;
 		box-shadow: none !important;
 	}
+	.bottom-space { height: 250px !important; }
 }
 	/* Sidebery Colors */
 #sdbr_preview_root {
