@@ -152,14 +152,13 @@ toolbarspring {
 	border-top: 0 !important;
 	transform: translateY(calc(var(--uc-navbar-transform) + var(--uc-navbar-hover-area))); /* Navbar Hover Area - Make Adjustments in userConfig.css */
 }
-#urlbar-background {
-	opacity: 0.85;
-	border-radius: 6px !important;
+.urlbar-background {
+	border-radius: 7px !important;
 }
+
 #star-button-box,
 .url-page-action {
 	visibility: visible !important;
-	display: block !important;
 }
 #PersonalToolbar {
 	height: 40px !important;

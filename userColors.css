@@ -7,6 +7,7 @@
   --toolbarbutton-active-background: rgb(115, 121, 148) !important;
   --background-color-box: rgba(56, 60, 77, 0.75) !important;
   --tab-selected-bgcolor: rgb(48, 52, 70) !important;/**/
+  --toolbar-background-color: rgb(36, 40, 59) !important; /*v152 changed from toolbar-bgcolor*/
   --toolbar-bgcolor: rgb(36, 40, 59) !important; /**/
   --lwt-accent-color-inactive: rgb(35, 38, 52) !important;/**/
   --lwt-accent-color: rgb(24, 25, 38)!important;
@@ -58,13 +59,25 @@
   --in-content-primary-button-text-color-hover: var(--lwt-accent-color) !important;
   --in-content-primary-button-background: var(--in-content-item-selected)  !important;
   --in-content-primary-button-background-hover: var(--tab-selected-outline-color) !important; /* Settings Content Button Background Color */
+/* 152- Changes */
+  --toolbar-field-background-color-focus: var(--arrowpanel-background) !important; /* v152-URL Main Background Color */
+/*--panel-background-color: transparent !important; /* v152-Page Menu Background Color - Redundent */
+  --panel-border-color: var(--toolbar-field-border-color) !important; /* v152-Page Menu Border Color */
+/*--button-background-color: var(--in-content-item-selected) !important; /* v152-URL Drop Down Selection 3-Dot Button & Other button backgrounds */
+  --panel-text-color: var(--lwt-text-color) !important;
 }
+
 #navigator-toolbox {
   background-color: var(--lwt-accent-color) !important;
   &:-moz-window-inactive {
     background-color: var(--lwt-accent-color) !important;
   }
 }
+
+.urlbarView-row:hover {
+  background-color: var(--in-content-item-selected) !important;
+}
+
 #sidebar,
 #sidebar-header {
   border-inline: 0px solid var(--tab-selected-outline-color) !important;
@@ -73,12 +86,17 @@
   color: var(--toolbar-color) !important;
 }
 menupopup, menu, panel {
-  --panel-background: var(--arrowpanel-background) !important;
+  --panel-background-color: var(--arrowpanel-background) !important; /* v152-Page Menu Background Color */
+/*  --toolbar-field-background-color-focus: var(--tab-selected-bgcolor) !important; /* v152-Page Menu Focus Background Color */
+/*  --panel-border-color: var(--toolbar-field-border-color) !important; /* v152-Page Menu Border Color */
+
+  --panel-background: transparent !important;
   --panel-border-color: var(--toolbar-field-border-color) !important;
 /*  --panel-shadow: 0 0px 25px -10px var(--in-content-item-selected) !important;  /* Page Menu Shadow Color */
   --panel-color: var(--lwt-text-color) !important; /* Page Menu Text Color */
 /*  --panel-shadow-margin: 25px !important; /* Causing Interaction problems with menus in an autofill box */
 /* --panel-item-hover-bgcolor: red !important; */
+  --panel-text-color: var(--lwt-text-color) !important;
 }
 /* This changes the color when hovering over items of some right click context menus */
 menubar > menu[_moz-menuactive="true"],
@@ -88,20 +106,40 @@ menuitem[_moz-menuactive="true"] {
   background-color: var(--in-content-item-selected) !important;
 }
 
+/* URL Keyboard Selection Highlight */
+div[selected][descendant-selected]{
+  background-color: transparent !important;
+  box-shadow:inset 0 1px 20px -5px rgb(255, 100, 244) !important;
+}
+
 /* HTTP Connection Security Indicators */
-/* https */
-.urlbar-input-container:has(#identity-box.verifiedDomain){ box-shadow: inset 0 0 0 1px rgb(80, 250, 122), inset 0 1px 20px -5px rgb(80, 250, 122) !important;}
+/* 1. Secure Connection (HTTPS / Verified) */
+#urlbar:has(#identity-box.verifiedDomain) .urlbar-background {
+  box-shadow: inset 0 1px 20px -5px rgb(80, 250, 122) !important;
+  /*border-color: rgba(80, 250, 122) !important;*/
+}
 
-/* http: and potentially some other insecure connections like ftp: */
-.urlbar-input-container:has(#identity-box.certErrorPage),
-.urlbar-input-container:has(#identity-box.notSecure){ box-shadow: inset 0 0 0 1px rgb(255, 100, 244), inset 0 1px 20px -5px rgb(255, 100, 244) !important;}
+/* 2. Insecure Connections (HTTP, FTP, or Certificate Errors) */
+#urlbar:has(#identity-box.certErrorPage) .urlbar-background,
+#urlbar:has(#identity-box.notSecure) .urlbar-background {
+  box-shadow: inset 0 1px 20px -5px rgb(255, 100, 100) !important;
+  border-color: rgb(255, 100, 100) !important;
+}
 
-/* Mixed content including neterror */
-.urlbar-input-container:has(#identity-box.unknownIdentity){ box-shadow: inset 0 0 0 1px rgb(255, 255, 128), inset 0 1px 20px -5px rgb(255, 255, 128) !important;}
+/* 3. Mixed Content / Neterror / Unknown Identity */
+#urlbar:has(#identity-box.unknownIdentity) .urlbar-background {
+  box-shadow: inset 0 1px 20px -5px rgb(255, 255, 128) !important;
+  /*border-color: rgba(255, 255, 128) !important;*/
+}
 
-/* Extension pages */
-.urlbar-input-container:has(#identity-box.extensionPage){ box-shadow: inset 0 0 0 1px rgba(42, 195, 222), inset 0 1px 20px -5px rgba(42, 195, 222) !important;}
+/* 4. Extension Pages */
+#urlbar:has(#identity-box.extensionPage) .urlbar-background {
+  box-shadow: inset 0 1px 20px -5px rgba(42, 195, 222) !important;
+  /*border-color: rgba(42, 195, 222) !important;*/
+}
 
-/* Internal about: and chrome:// urls (includes reader-view) */
-.urlbar-input-container:has(#identity-box.chromeUI){ box-shadow: inset 0 0 0 1px rgba(42, 195, 222), inset 0 1px 20px -5px rgba(42, 195, 222) !important;}
-
+/* 5. Internal about: and chrome:// URLs (includes reader-view) */
+#urlbar:has(#identity-box.chromeUI) .urlbar-background {
+  box-shadow: inset 0 1px 20px -5px rgba(42, 195, 222) !important;
+  /*border-color: rgba(42, 195, 222) !important;*/
+}
