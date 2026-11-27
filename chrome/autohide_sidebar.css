@@ -17,15 +17,15 @@ See the above repository for updates as well as full license text. */
 :where(#main-window) #browser{
   --uc-sidebar-width: 40px;
   --uc-sidebar-hover-width: 210px;
+  --uc-autohide-sidebar-delay: 600ms; /* Wait 0.6s before hiding sidebar */
+  --uc-autohide-transition-duration: 115ms;
+  --uc-autohide-transition-type: linear;
+  --browser-area-z-index-sidebar: 3;
 }
 #main-window[sizemode="fullscreen"] #browser{
   --uc-sidebar-width: 1px;
 }
 #sidebar-box{
-  --uc-autohide-sidebar-delay: 600ms; /* Wait 0.6s before hiding sidebar */
-  --uc-autohide-transition-duration: 115ms;
-  --uc-autohide-transition-type: linear;
-  --browser-area-z-index-sidebar: 3;
   position: relative;
   min-width: var(--uc-sidebar-width) !important;
   width: var(--uc-sidebar-width) !important;
@@ -38,6 +38,7 @@ See the above repository for updates as well as full license text. */
     direction: rtl;
   }
 }
+#sidebar-panel-header,
 .sidebar-browser-stack{
   background: inherit;
 }
@@ -57,7 +58,15 @@ See the above repository for updates as well as full license text. */
   display: flex;
   padding-left: 8px;
 }
-
+#sidebar-panel-header{
+  box-sizing: border-box;
+  padding-inline: 0 !important;
+  overflow: hidden;
+}
+.sidebar-panel-heading{
+  padding-inline: var(--space-large);
+}
+#sidebar-panel-header,
 #sidebar-header,
 #sidebar{
   transition: min-width var(--uc-autohide-transition-duration) var(--uc-autohide-transition-type) var(--uc-autohide-sidebar-delay) !important;
@@ -68,9 +77,11 @@ See the above repository for updates as well as full license text. */
     direction: rtl;
   }
 }
-#sidebar-box:hover > #sidebar-header,
+#sidebar-panel-header:hover + .sidebar-browser-stack > #sidebar,
+#sidebar-box:hover > #sidebar-panel-header,
 #sidebar-box:hover > #sidebar,
-#sidebar-box:hover > .sidebar-browser-stack > #sidebar{
+#sidebar-box:hover > .sidebar-browser-stack > #sidebar,
+#sidebar-container:hover ~ #sidebar-box > .sidebar-browser-stack > #sidebar{
   min-width: var(--uc-sidebar-hover-width) !important;
   transition-delay: 0ms !important;
 }
@@ -87,11 +98,11 @@ See the above repository for updates as well as full license text. */
 }
 
 /* Add sidebar divider and give it background */
-
+#sidebar-panel-header,
 #sidebar,
 #sidebar-header{
   background-color: inherit !important;
-  border-inline: 1px solid rgb(80,80,80);
+  border-inline: 1px solid var(--chrome-content-separator-color);
   border-inline-width: 0px 1px;
 }
 
@@ -100,7 +111,7 @@ See the above repository for updates as well as full license text. */
   border-inline-width: 1px 0px;
 }
 @media -moz-pref("sidebar.revamp") {
-  #sidebar, #sidebar-header{ border-style: none }
+  #sidebar, #sidebar-header, #sidebar-panel-header{ border-style: none }
   #sidebar-box{ padding: 0 !important; }
 }
 /* Move statuspanel to the other side when sidebar is hovered so it doesn't get covered by sidebar */
@@ -126,6 +137,8 @@ See the above repository for updates as well as full license text. */
     width: 100%;
     transition: width var(--uc-autohide-transition-duration) var(--uc-autohide-transition-type) var(--uc-autohide-sidebar-delay);
     direction: ltr;
+    #sidebar-panel-header:hover + &,
+    #sidebar-container:hover ~ #sidebar-box > &,
     &:hover{
       transition-delay: 0ms;
       width: var(--uc-sidebar-hover-width);
@@ -147,7 +160,7 @@ See the above repository for updates as well as full license text. */
   }
 }
 @media -moz-pref("userchrome.autohide-sidebar.hide-main-sidebar"){
-  #sidebar-main[sidebar-panel-open]{
+  :is(#sidebar-main,#sidebar-container)[sidebar-panel-open]{
     contain: strict;
   }
 }

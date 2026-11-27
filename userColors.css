@@ -109,37 +109,44 @@ menuitem[_moz-menuactive="true"] {
 /* URL Keyboard Selection Highlight */
 div[selected][descendant-selected]{
   background-color: transparent !important;
-  box-shadow:inset 0 1px 20px -5px rgb(255, 100, 244) !important;
+  box-shadow:inset 0 0 20px -5px rgb(255, 100, 244) !important;
 }
 
 /* HTTP Connection Security Indicators */
+
 /* 1. Secure Connection (HTTPS / Verified) */
-#urlbar:has(#identity-box.verifiedDomain) .urlbar-background {
+#urlbar:has(#identity-box.verifiedDomain) :is(.urlbar-background, .urlbarView-background) {
   box-shadow: inset 0 1px 20px -5px rgb(80, 250, 122) !important;
-  /*border-color: rgba(80, 250, 122) !important;*/
+  border-color: rgb(80, 250, 122) !important;
 }
 
 /* 2. Insecure Connections (HTTP, FTP, or Certificate Errors) */
-#urlbar:has(#identity-box.certErrorPage) .urlbar-background,
-#urlbar:has(#identity-box.notSecure) .urlbar-background {
+#urlbar:has(#identity-box:is(.certErrorPage, .notSecure)) :is(.urlbar-background, .urlbarView-background) {
   box-shadow: inset 0 1px 20px -5px rgb(255, 100, 100) !important;
   border-color: rgb(255, 100, 100) !important;
 }
 
 /* 3. Mixed Content / Neterror / Unknown Identity */
-#urlbar:has(#identity-box.unknownIdentity) .urlbar-background {
+#urlbar:has(#identity-box.unknownIdentity) :is(.urlbar-background, .urlbarView-background) {
   box-shadow: inset 0 1px 20px -5px rgb(255, 255, 128) !important;
-  /*border-color: rgba(255, 255, 128) !important;*/
+  border-color: rgb(255, 255, 128) !important;
 }
 
-/* 4. Extension Pages */
-#urlbar:has(#identity-box.extensionPage) .urlbar-background {
-  box-shadow: inset 0 1px 20px -5px rgba(42, 195, 222) !important;
-  /*border-color: rgba(42, 195, 222) !important;*/
+/* 4. Extension Pages & 5. Internal about: / chrome:// URLs (includes reader-view) */
+#urlbar:has(#identity-box:is(.extensionPage, .chromeUI)) :is(.urlbar-background, .urlbarView-background) {
+  box-shadow: inset 0 1px 20px -5px rgb(42, 195, 222) !important;
+  border-color: rgb(42, 195, 222) !important;
 }
 
-/* 5. Internal about: and chrome:// URLs (includes reader-view) */
-#urlbar:has(#identity-box.chromeUI) .urlbar-background {
-  box-shadow: inset 0 1px 20px -5px rgba(42, 195, 222) !important;
-  /*border-color: rgba(42, 195, 222) !important;*/
+#trust-icon-container.insecure {
+  background-color: rgb(255, 100, 100) !important;
+}
+#identity-icon-box.identity-box-button {
+  background-color: rgb(42, 195, 222) !important;
+}
+
+.button-background {
+  &[type~="muted"] {
+    background-color: transparent !important;
+  }
 }

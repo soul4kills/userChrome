@@ -15,8 +15,8 @@ div.popup[style*="--fg"][style*="--bg"] {
 	/* Fix pop-in-page tab preview alignment - Specifically when maximized or uc.full.tabs is true */
 @media -moz-pref("uc.full.tabs"), (width: 1728px) { /* Adjustments needed for user viewport size when MAXIMIZED */
 	div.popup[style*="--fg"][style*="--bg"] {
-		right: unset !important; left: 0px !important;
-		@media not -moz-pref("sidebar.position_start") { left: unset !important; right: 0px !important;}
+		right: unset !important; left: 1px !important;
+		@media not -moz-pref("sidebar.position_start") { left: unset !important; right: 1px !important;}
 	}
 }
 	/* Tab preview fix alignment when uc.chromeless is toggled to true */
@@ -44,18 +44,15 @@ div.popup[style*="--fg"][style*="--bg"] {
 			.title,
 			.close, .exp  { visibility: collapse !important } /* Prevent tab closing  from touchscreen interaction */
 			.audio {
-				left: 10px  !important;
-				transform: scale(.80) !important;
-				transform: translateY(4px)  !important;
+				transform: translate(-10px, 8px) !important;
 				fill: var(--tabs-activated-fg);
 			}
 		}
 	}
 }
 @media screen and (min-width: 50px) { /* Activates When not Collapsed */
-	div#root.root.Sidebar .Tab .audio {
-		left: 10px !important;
-		top: 4px !important;
+	div#root.root.Sidebar .Tab[data-pin="false"] .audio {
+			transform: translate(-10px, 8px) !important;
 	}
 }
 div#root.root.Sidebar {
@@ -82,7 +79,7 @@ div#root.root.Sidebar {
 	}
 	.Tab {
 		&[data-pin="true"] .audio {
-			transform: translate(5px, 8px) !important;
+			transform: translate(2px, 14px) !important;
 		}
 		&[data-active="true"] .body {
 			box-shadow: 0 0 0 1px var(--tab-selected-outline-color),0 1px 20px -5px var(--tab-selected-outline-color) !important;
