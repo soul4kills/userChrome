@@ -180,6 +180,12 @@ toolbarspring {
 	z-index: 1 !important;
 	opacity: 95% !important;
 }
+
+moz-button[data-l10n-id="sidebar-panel-header-close-button"] {
+	cursor: grab !important;
+	-webkit-user-select: none !important;
+	-moz-window-dragging: drag !important;
+}
 	/* Removes left and right spacers in toolbar & sidebar close button */
 .titlebar-spacer[type="pre-tabs"],
 .titlebar-spacer[type="post-tabs"],
